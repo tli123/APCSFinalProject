@@ -1,0 +1,55 @@
+General Game Outline:
+
+while(OverlordAlive){
+
+    while(DunegonNotCleared){
+
+
+	GenerateMonster(LevelNumber);
+	    MonsterStillAlive = true;
+
+	while(MonsterStillAlive){///\\\
+
+	    BATTLE!!!!//Specified below
+	} ///\\\
+	
+	BattleAfterMath i.e. adding stats
+
+	MonstersLeft-=1;
+	if (MonstersLeft = 0){
+	    DungeonNotClear = false;
+	}
+
+
+    } //dunegon cleared, moving on.
+
+
+    levelChange, i.e. move up, stay to grind, move down; 
+    LevelNumber = LevelNumber+1||-1|| no change;
+    DunegonNotCleared = true;
+
+    SaveOption;
+
+}
+
+
+
+///////////////////BATTLE
+
+You encontered Monster
+
+
+///////Repeat below 
+Current Status:
+Character's Name	Monster's Name
+Health: 100/100	Health: 10/10
+
+
+What do you want to do?
+Quick Poke || Normal Slash || Heavy Swing  || Potion
+
+Character attacked and hit. Monster has 5/10 health left.
+Monster attacked and miss. Character has 100/100 health left
+
+
+///////Repeat above Until dead
