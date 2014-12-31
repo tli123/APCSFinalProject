@@ -8,3 +8,6 @@ Period 1
 12/22/2014: Made a outline of how the game would progress and how a battle would work  Rong Yu
 12/29/2014: Created a sperate load and save feature. It will be implement after character generator is created Rong Yu
 12/30/2014: MonsterGen changes the stats. Doesn't make a monster, because no idea what monsters to add Rong Yu
+12/31/2014: Made a battle file, i.e. all battles will be a single method from the battle file. 
+	Added a basic attack to Basechar
+	Made extremely simplified version with the levels and battle Rong Yu

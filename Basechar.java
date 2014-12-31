@@ -19,6 +19,21 @@ public class Basechar {
 	this.name = n;
     }
 
+    public String Attack(Basechar other){
+	if (didHit(accuracy)){
+	    other.health=other.health-this.attack;
+	    return (name+" attacked "+other.name+" and dealt "+attack+" damage, "+other.name+" now has "+other.health+" left");}
+	else{
+	    return(name+" attacked and missed");}
+    }
+
+    public boolean didHit(int chance){
+	Random r = new Random();
+	if (r.nextInt(100)>chance){
+	    return false;}
+	else {return true;}
+    }
+
     public void start (Basechar other) {
 
     }
