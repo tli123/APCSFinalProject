@@ -11,3 +11,6 @@ Period 1
 12/31/2014: Made a battle file, i.e. all battles will be a single method from the battle file. 
 	Added a basic attack to Basechar
 	Made extremely simplified version with the levels and battle Rong Yu
+1/1/2015: Added the Level Up system to increase Stats,
+	Increased difficulty of monsters as the levels increased,
+	Made the battle give more details Rong Yu

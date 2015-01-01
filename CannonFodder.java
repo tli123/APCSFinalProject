@@ -23,14 +23,7 @@ public class CannonFodder extends Basechar{
     }
 
 
-    public void Stats(){
-	System.out.println("Health: "+health);
-	System.out.println("Attack: "+attack);
-	System.out.println("Defense: "+defense);
-	System.out.println("Accuracy: "+accuracy);
-	System.out.println("Evade: "+evade);
-	System.out.println("Name: "+name);
-    }
+
 
     public static void main(String args[]){
 	CannonFodder CF = new CannonFodder();
