@@ -15,3 +15,9 @@ Period 1
 	Increased difficulty of monsters as the levels increased,
 	Made the battle give more details Rong Yu
 1/2/2015: Added a item system, but it hasn't been tested yet Rong Yu
+1/3/2015: Added a quit option to every choice.
+	Every monster will now have different stats.
+	Each monster now drops it's own item.
+	Players can pick their own name, with a comfirmation.
+	Case no longer matters for options.
+	Implemented the Save and Load system, though progress is not saved.

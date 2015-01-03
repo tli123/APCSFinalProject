@@ -1,16 +1,18 @@
 public class CannonFodder extends Basechar{
 
     public CannonFodder(){
-	super(10, 2, 0, 75, 5, "Cannon Fodder");
+	super(10, 2, 0, 75, 5, 2, "Cannon Fodder");
     }
 
+/*
     public int[] GetStats(){
-	int[] Stat = new int[5];
+	int[] Stat = new int[6];
 	Stat[0]=health;
 	Stat[1]=attack;
 	Stat[2]=defense;
 	Stat[3]=accuracy;
 	Stat[4]=evade;
+	Stat[5]=weaponStats;
 	return Stat;
     }
 
@@ -24,12 +26,11 @@ public class CannonFodder extends Basechar{
 
 
 
-
     public static void main(String args[]){
 	CannonFodder CF = new CannonFodder();
 	CF.Stats();
 
     }
-
+*/
 
 }

@@ -5,6 +5,7 @@ public class Battle{
     public boolean battle(Basechar A, Basechar B){
 	int HRestore = A.health;
 	while (NotDead(A) || NotDead(B)){
+	    System.out.println();
 	    A.Status();
 	    B.Status();
 	    Scanner sc = new Scanner(System.in);
@@ -13,7 +14,6 @@ public class Battle{
 		System.exit(0);}
 	    System.out.println(A.Attack(B));
 	    if (!NotDead(B)){
-		System.out.println("You win!");
 		A.health=HRestore;
 		return true;}
 	    System.out.println(B.Attack(A));
