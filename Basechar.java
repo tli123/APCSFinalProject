@@ -9,6 +9,8 @@ public class Basechar {
     public int accuracy;
     public int evade;
     public String name;
+    public int weaponName;
+    public int weaponStats;
 
     public Basechar(int h, int a, int d, int acc, int e, String n) {
 	this.health = h;
@@ -69,6 +71,29 @@ public class Basechar {
 	    evade+=2;}
 	System.out.println("Now your stats are the following:");
 	Stats();
+    }
+
+    public void WantWeapon(int WeaponName, int WeaponStats){
+	System.out.println("You found an item!");
+	System.out.println("Your curent weapon does +"+weaponStats+" damage");
+	System.out.println("The weapon you found does +"+WeaponStats+" damage");
+	System.out.println("Would you like to replace your weapon? Yes or No?");
+
+	String Choice = "";
+	boolean Correct=true;
+	while (Correct){
+	    Scanner sc = new Scanner(System.in);
+	    Choice = sc.next();
+	    String[] Check = {"Yes", "No"};
+	    if (!Arrays.asList(Check).contains(Choice)) {
+		System.out.println("This is not Yes or No");}
+	    else{ Correct=false;}}
+	if (Choice.equals("Yes")){
+	    weaponStats=WeaponStats;
+	    System.out.println("Your new stats are:");
+	    Stats();}
+	else {
+	    System.out.println("Your stats have not changed.");}
     }
 
     public void Gen(int Level){

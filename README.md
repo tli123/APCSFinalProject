@@ -14,3 +14,4 @@ Period 1
 1/1/2015: Added the Level Up system to increase Stats,
 	Increased difficulty of monsters as the levels increased,
 	Made the battle give more details Rong Yu
+1/2/2015: Added a item system, but it hasn't been tested yet Rong Yu
