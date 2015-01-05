@@ -47,6 +47,7 @@ public class Basechar {
 	System.out.println("Accuracy: "+accuracy);
 	System.out.println("Evade: "+evade);
 	System.out.println("Weapon Damage: "+weaponStats);
+	System.out.pritnln("Class: " + type);
     }
 
     public void LevelingUp(){
@@ -149,6 +150,7 @@ public class Basechar {
 	evade=Integer.valueOf(Stats[4]);
 	weaponStats=Integer.valueOf(Stats[5]);
 	name=Stats[6];
+	type=Stats[7];
     }
 
     public String[] GetStats(){
@@ -160,6 +162,7 @@ public class Basechar {
 	Stat[4]=String.valueOf(evade);
 	Stat[5]=String.valueOf(weaponStats);
 	Stat[6]=name;
+	Stat[7]=type;
 	return Stat;
     }
 

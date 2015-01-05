@@ -11,13 +11,12 @@ public class SaveLoad{
 
     public String[] Load(){
 	File file = new File("save.txt");
-	String[] Arr = new String [7]; //This is the number of stats
+	String[] Arr = new String [8]; //This is the number of stats
 	int i=0;
 	try{
 	    Scanner scanner = new Scanner(file);
 	    while (scanner.hasNextLine()){
 		Arr[i]=scanner.nextLine();
-		System.out.println(Arr[i]);
 		i++;
 	    }
 	    scanner.close();
