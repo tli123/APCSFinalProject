@@ -20,6 +20,6 @@ Period 1
 
 1/3/2015: Added a quit option to every choice. Every monster will now have different stats. Each monster now drops it's own item. Players can pick their own name, with a comfirmation. Case no longer matters for options. Implemented the Save and Load system, though progress is not saved. Rong Yu
 
-1/4/2015: Added the basics of shop, need to ad special effects of each weapon
+1/4/2015: Added the basics of shop, need to ad special effects of each weapon Tommy Li
 
 Still need to work on: Levels (What happens in each level), more variety of monsters, shop
