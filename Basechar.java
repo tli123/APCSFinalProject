@@ -11,8 +11,9 @@ public class Basechar {
     public String name;
     public int weaponName;
     public int weaponStats;
+    public String type;
 
-    public Basechar(int h, int a, int d, int acc, int e, int WS, String n) {
+    public Basechar(int h, int a, int d, int acc, int e, int WS, String n, String t) {
 	this.health = h;
 	this.attack = a;
 	this.defense = d;
@@ -20,6 +21,7 @@ public class Basechar {
 	this.evade = e;
 	this.weaponStats=WS;
 	this.name = n;
+	this.type = t;
     }
 
     public String Attack(Basechar other){
