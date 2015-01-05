@@ -3,7 +3,7 @@ import java.util.*;
 
 public class SaveLoad{
 
-//1.Health 2.Attack 3.Defense 4.Accuracy 5.Evade 6. WeaponsStats 7.Name
+//1.Health 2.Attack 3.Defense 4.Accuracy 5.Evade 6. WeaponsStats 7.Name 8. Type
 
     /* This works by reading a file and returning an arrayList of each line, 
         from there, all stats will be assigned a number or string from it in 
@@ -87,7 +87,7 @@ public class SaveLoad{
 
     public static void main(String args[]) throws Exception{
 	SaveLoad Demo=new SaveLoad();
-	Basechar BChar = new Basechar(10, 10, 10,10,10,10,"Rong");
+	Basechar BChar = new Basechar(10, 10, 10,10,10,10,"Rong", "Warrior");
 	//Demo.Write(BChar.GetStats());
 	BChar.ImpleStats(Demo.Load());
 	
