@@ -24,6 +24,6 @@ Period 1
 
 1/5/2015: Added "type" to constructor to help with shop for each character, update on the files that use the Basechar constructor Tommy, Rong
 
-1/6/2015: Updated all classes with coins, deleted weapon dropping for coin dropping system, continued to work on shop, determined stats for bosses, monsters, adding multiple battles per level - 10 cap Tommy Rong
+1/6/2015: Updated all classes with coins, deleted weapon dropping for coin dropping system, continued to work on shop, determined stats for bosses, monsters, adding multiple battles per level, fixed problems from adding more stats, commented out confirmation with loading and saving - 10 cap Tommy Rong
 
 Still need to work on: Levels (What happens in each level), more variety of monsters, shop

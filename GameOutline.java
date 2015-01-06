@@ -30,18 +30,21 @@ public class GameOutline{
 		Battle fight = new Battle();
 		if(fight.battle(B, A)){
 		    MonsterNum-=1;
-		    B.LevelingUp();
+		    System.out.println("You have found "+A.coins+"coins.");
 		    B.coins+=A.coins;
+		    B.LevelingUp();
 		    if (SL.LS(2)){
-			SL.Write(B.GetStats());}
+			SL.Write(B.GetStats());
+			System.out.println("You saved the game.");}
 		}
 		else {LevelNumber-=1;
 		    MonsterNum=LevelNumber*5;}
 		
 	    }
+	    Battle Fight = new Battle();
 	    Boss A = new Boss();
-	    A.BossGen(LevelNum)
-	    if(fight.battle(B, A)){
+	    A.BossGen(LevelNumber);
+	    if(Fight.battle(B, A)){
 		B.LevelingUp();
 		B.coins+=A.coins;
 	    }

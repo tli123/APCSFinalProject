@@ -3,7 +3,7 @@ import java.util.*;
 public class Battle{
 
     public boolean battle(Basechar A, Basechar B){
-	int HRestore = A.health;
+	//int HRestore = A.health;
 	while (NotDead(A) || NotDead(B)){
 	    System.out.println();
 	    A.Status();
@@ -19,7 +19,7 @@ public class Battle{
 	    System.out.println(B.Attack(A));
 	    if (!NotDead(A)){
 		System.out.println("You lose!");
-		A.health=HRestore;
+		//A.health=HRestore;
 		return false;}
 	}
 	return false;

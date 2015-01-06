@@ -49,7 +49,7 @@ public class Basechar {
 	System.out.println("Accuracy: "+accuracy);
 	System.out.println("Evade: "+evade);
 	System.out.println("Weapon Damage: "+weaponStats);
-	System.out.pritnln("Class: " + type);
+	System.out.println("Class: " + type);
 	System.out.println("Coins: " + coins);
     }
 
@@ -113,7 +113,7 @@ public class Basechar {
 	weaponStats=R.nextInt(Level*3);
     }
 
-    public void BossGen(){
+    public void BossGen(int Level){
         health+=health*Level;
 	attack+=attack*Level;
 	defense+=2*Level;
@@ -157,7 +157,7 @@ public class Basechar {
 	Stat[5]=String.valueOf(weaponStats);
 	Stat[6]=name;
 	Stat[7]=type;
-	Stat[7]=String.valueOf(coins);
+	Stat[8]=String.valueOf(coins);
 	return Stat;
     }
 

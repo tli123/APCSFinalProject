@@ -56,7 +56,7 @@ public class SaveLoad{
     public boolean LS(int num){
 	boolean Unconfirm=true;
 	String Choice;
-	while(true){
+	//while(true){
 
 	while (true){
 	    if (num==1){System.out.println("Would you like to load the save file?");}
@@ -67,8 +67,9 @@ public class SaveLoad{
 	    String[] Check = {"YES", "NO", "QUIT"};
 	    if (!Arrays.asList(Check).contains(Choice)) {
 		System.out.println("Type yes or no only");}
-	    else{break;}	}
-
+	    else{return true;}	}
+	
+	/*
 	while(true){
 	    System.out.println("Are you sure?");
 	    Scanner SC = new Scanner(System.in);
@@ -81,16 +82,17 @@ public class SaveLoad{
 
 	    else{break;}
 	}
-	}
+	*/
+	//}
     }
-
+/*
     public static void main(String args[]) throws Exception{
 	SaveLoad Demo=new SaveLoad();
-	Basechar BChar = new Basechar(10, 10, 10,10,10,10,"Rong", "Warrior");
+	//Basechar BChar = new Basechar(10, 10, 10,10,10,10,"Rong", "Warrior");
 	//Demo.Write(BChar.GetStats());
 	BChar.ImpleStats(Demo.Load());
 	
 		
     }
-
+*/
 }
