@@ -15,7 +15,6 @@ public class Shop {
     if (this.type.equals("Warrior")) {
 	System.out.println("Warrior Shop:");
 	System.out.println("Copper Sword: A crude, somewhat sturdy sword. Does not have any special effects. Does slightly more damage than the Basic Sword (6
-
 00 coins)");
 	System.out.println("Bronze Sword: A smooth blade with a blunt point. Has a 5% chance of healing you of 50% of the damage dealt. Does slightly more damage than the Copper Sword (900 coins)");
 	System.out.println("Silver Sword: A firm, sturdy sword. Lowers the accuracy of the opponent by 5% with a 10% chance. Much stronger than the Bronze Sword. (1400 coins)");
@@ -26,8 +25,8 @@ public class Shop {
 
     if (this.type.equals("Mage")) {
 	System.out.println("Mage Shop:");
-	System.out.println("Wooden Staff (600)");
-	System.out.println("Fire Staff (900)");
+	System.out.println("Wooden Staff: A basic, wooden staff. Does not have any special effects. Does slightly more damage than the Basic Staff. (600 coins)");
+	System.out.println("Fire Staff: A staff that glows and is warm to the touch. Has a 5% chance  (900)");
 	System.out.println("Water Staff (1400)");
 	System.out.println("Earth Staff (2500)");
 	System.out.println("Ice Staff (5000)");
