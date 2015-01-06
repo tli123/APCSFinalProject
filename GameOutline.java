@@ -22,25 +22,33 @@ public class GameOutline{
 
 	while(true){ // Overlord not dead
 
-	    MonsterNum=LevelNumber;
+	    MonsterNum=LevelNumber*5;
 	    while (MonsterNum>0){ //Dungeon not cleared
-		//make monster
 		CannonFodder A = new CannonFodder();
 		A.Gen(LevelNumber);
 		
 		Battle fight = new Battle();
 		if(fight.battle(B, A)){
 		    MonsterNum-=1;
-		    B.LevelingUp();	
-		    if (B.Chance(LevelNumber)){
-			B.WantWeapon(A.weaponStats);}
-		    else{ System.out.println("You did not find a weapon");} 
+		    B.LevelingUp();
+		    B.coins+=A.coins;
+		    if (SL.LS(2)){
+			SL.Write(B.GetStats());}
 		}
-		System.out.println(MonsterNum+" monsters left");
-		if (SL.LS(2)){
-	    	    SL.Write(B.GetStats());}
+		else {LevelNumber-=1;
+		    MonsterNum=LevelNumber*5;}
 		
 	    }
+	    Boss A = new Boss();
+	    A.BossGen(LevelNum)
+	    if(fight.battle(B, A)){
+		B.LevelingUp();
+		B.coins+=A.coins;
+	    }
+	    
+	    System.out.println("You defeated the boss");
+
+		
 	    LevelNumber+=1;
 	    System.out.println("You are now on level "+LevelNumber);
 	    if (LevelNumber>9){
