@@ -12,8 +12,9 @@ public class Basechar {
     public int weaponName;
     public int weaponStats;
     public String type;
+    public int coins;
 
-    public Basechar(int h, int a, int d, int acc, int e, int WS, String n, String t) {
+    public Basechar(int h, int a, int d, int acc, int e, int WS, String n, String t, int c) {
 	this.health = h;
 	this.attack = a;
 	this.defense = d;
@@ -21,7 +22,8 @@ public class Basechar {
 	this.evade = e;
 	this.weaponStats=WS;
 	this.name = n;
-	this.type = t;
+       	this.type = t;
+	this.coins = c;
     }
 
     public String Attack(Basechar other){
@@ -48,6 +50,7 @@ public class Basechar {
 	System.out.println("Evade: "+evade);
 	System.out.println("Weapon Damage: "+weaponStats);
 	System.out.pritnln("Class: " + type);
+	System.out.println("Coins: " + coins);
     }
 
     public void LevelingUp(){
