@@ -26,11 +26,11 @@ public class Shop {
     if (this.type.equals("Mage")) {
 	System.out.println("Mage Shop:");
 	System.out.println("Wooden Staff: A basic, wooden staff. Does not have any special effects. Does slightly more damage than the Basic Staff. (600 coins)");
-	System.out.println("Fire Staff: A staff that glows and is warm to the touch. Has a 5% chance  (900)");
-	System.out.println("Water Staff (1400)");
-	System.out.println("Earth Staff (2500)");
-	System.out.println("Ice Staff (5000)");
-	System.out.println("Golden Staff (10000)");
+	System.out.println("Fire Staff: A staff that glows and is warm to the touch. Has a 5% chance to burn the opponent. Bosses cannot be burned with this staff. Slightly more powerful than the Wooden Staff. (900 coins)");
+	System.out.println("Water Staff: A staff that is cool and refreshing to the touch. Has a 5% chance to heal you for half the damage you dealt to the monster. Much more powerful than the Fire Staff. (1400 coins)");
+	System.out.println("Earth Staff: A staff that radiates the power of nature. Has a 10% chance to drop the opponent's defense by 10%. Slightly more powerful than  the Water staff. (2500 coins)");
+	System.out.println("Ice Staff: A staff, when not handled properly, can freeze the best of mages. Has a 3% chance to freeze the opponent for 1 turn. Bosses cannot be frozen. Much more powerful than the Earth Staff. (5000)");
+	System.out.println("Golden Staff: A staff that radiates brilliance. Has a 10% chance to lower the opponent's accuracy by 15%. Does not work on bosses. Much stronger than the Ice Staff. (10000)");
     }
 
     if (this.type.equals("Rogue")) {
