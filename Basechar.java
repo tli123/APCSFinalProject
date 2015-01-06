@@ -94,41 +94,31 @@ public class Basechar {
 	return false;
     }
 
-    public void WantWeapon(int WeaponStats){
-	System.out.println();
-	System.out.println("You found an item!");
-	System.out.println("Your curent weapon does +"+weaponStats+" damage");
-	System.out.println("The weapon you found does +"+WeaponStats+" damage");
-	System.out.println("Would you like to replace your weapon? Yes or No?");
-
-	String Choice = "";
-	boolean Correct=true;
-	while (Correct){
-	    Scanner sc = new Scanner(System.in);
-	    Choice = sc.next();
-	    Choice = Choice.toUpperCase();
-	    String[] Check = {"YES", "NO", "QUIT"};
-	    if (!Arrays.asList(Check).contains(Choice)) {
-		System.out.println("Type yes or no only");}
-	    else{ Correct=false;}}
-	if (Choice.equals("QUIT")){
-	    System.exit(0);}
-	if (Choice.equals("YES")){
-	    weaponStats=WeaponStats;
-	    System.out.println();
-	    System.out.println("Your new stats are:");
-	    Stats();}
-	else {
-	    System.out.println();
-	    System.out.println("Your stats have not changed.");}
-    }
-
+    
+    
     public void Gen(int Level){
 	health+=(health/2)*Level;
 	attack+=(attack/2)*Level;
 	defense+=Level;
 	accuracy+=Level;
 	evade+=Level;
+	weaponStats=weaponStats*Level;
+
+	Random R=new Random();
+	health+=R.nextInt(Level*3);
+	attack+=R.nextInt(Level*3);
+	defense+=R.nextInt(Level*3);
+	accuracy+=R.nextInt(Level*3);
+	evade+=R.nextInt(Level*3);
+	weaponStats=R.nextInt(Level*3);
+    }
+
+    public void BossGen(){
+        health+=health*Level;
+	attack+=attack*Level;
+	defense+=2*Level;
+	accuracy+=2*Level;
+	evade+=2*Level;
 	weaponStats=weaponStats*Level;
 
 	Random R=new Random();
@@ -154,10 +144,11 @@ public class Basechar {
 	weaponStats=Integer.valueOf(Stats[5]);
 	name=Stats[6];
 	type=Stats[7];
+	coins=Integer.valueOf(Stats[8]);
     }
 
     public String[] GetStats(){
-	String[] Stat = new String[7];
+	String[] Stat = new String[9];
 	Stat[0]=String.valueOf(health);
 	Stat[1]=String.valueOf(attack);
 	Stat[2]=String.valueOf(defense);
@@ -166,6 +157,7 @@ public class Basechar {
 	Stat[5]=String.valueOf(weaponStats);
 	Stat[6]=name;
 	Stat[7]=type;
+	Stat[7]=String.valueOf(coins);
 	return Stat;
     }
 

@@ -3,7 +3,7 @@ import java.util.*;
 
 public class SaveLoad{
 
-//1.Health 2.Attack 3.Defense 4.Accuracy 5.Evade 6. WeaponsStats 7.Name 8. Type
+//1.Health 2.Attack 3.Defense 4.Accuracy 5.Evade 6. WeaponsStats 7.Name 8. Type 9.Coins
 
     /* This works by reading a file and returning an arrayList of each line, 
         from there, all stats will be assigned a number or string from it in 
@@ -11,7 +11,7 @@ public class SaveLoad{
 
     public String[] Load(){
 	File file = new File("save.txt");
-	String[] Arr = new String [8]; //This is the number of stats
+	String[] Arr = new String [9]; //This is the number of stats
 	int i=0;
 	try{
 	    Scanner scanner = new Scanner(file);
@@ -79,7 +79,7 @@ public class SaveLoad{
 		else{ return false;}
 	    }
 
-	    else{break;} //5:32 5:44 
+	    else{break;}
 	}
 	}
     }
