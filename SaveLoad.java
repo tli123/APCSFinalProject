@@ -12,12 +12,11 @@ public class SaveLoad{
     public String[] Load(){
 	File file = new File("save.txt");
 	String[] Arr = new String [9]; //This is the number of stats
-	int i=0;
 	try{
 	    Scanner scanner = new Scanner(file);
-	    while (scanner.hasNextLine()){
+	    for (int i=0; i<9; i++){
+		//while (scanner.hasNextLine()){
 		Arr[i]=scanner.nextLine();
-		i++;
 	    }
 	    scanner.close();
 	} catch (Exception e) {
@@ -52,6 +51,46 @@ public class SaveLoad{
 	    System.out.println("file not found");
 	}
     }
+
+    public ArrayList<String> ILoad(){
+	File file = new File("inventory.txt");
+	ArrayList<String> Stuff = new ArrayList<String>();
+	try{
+	    Scanner scanner = new Scanner(file);
+	    while (scanner.hasNextLine()){
+		Stuff.add(scanner.nextLine());
+	    }
+	    scanner.close();
+	} catch (Exception e) {
+	    System.out.println("File not found");}
+	return Stuff;
+    }
+    
+    public void IWrite(ArrayList<String> Stuff) throws Exception{
+	/*deletes everything inside*/
+	PrintWriter writer = new PrintWriter("inventory.txt");
+	writer.print("");
+	writer.close();
+
+	BufferedReader bfr;
+	String line;    
+	bfr=new BufferedReader(new InputStreamReader(System.in));
+	File file=new File("inventory.txt");  
+	
+	try{
+	    bfr=new BufferedReader(new FileReader(file));
+	    FileWriter fw=new FileWriter(file,true);    
+	    for (int i = 0; i<Stuff.size(); i++){
+		fw.append(String.valueOf(Stuff.get(i)));
+		fw.append("\n");
+	    }
+	    bfr.close();
+	    fw.close();
+	} catch(Exception e){
+	    System.out.println("file not found");
+	}
+    }
+
 
     public boolean LS(int num){
 	boolean Unconfirm=true;

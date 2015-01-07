@@ -13,6 +13,7 @@ public class Basechar {
     public int weaponStats;
     public String type;
     public int coins;
+    public ArrayList<String> inventory;
 
     public Basechar(int h, int a, int d, int acc, int e, int WS, String n, String t, int c) {
 	this.health = h;
@@ -161,8 +162,11 @@ public class Basechar {
 	return Stat;
     }
 
-
-    public void start (Basechar other) {
-
+    public void displayInventory(){
+	System.out.println("This is your inventory:");
+	for (int i=0; i<inventory.size(); i++){
+	    System.out.println(i+". "+inventory.get(i));}
+	//add in the scanner options
     }
+	
 }

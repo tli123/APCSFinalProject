@@ -1,9 +1,10 @@
+
 import java.util.*;
 
 public class Battle{
 
     public boolean battle(Basechar A, Basechar B){
-	//int HRestore = A.health;
+	int HRestore = A.health;
 	while (NotDead(A) || NotDead(B)){
 	    System.out.println();
 	    A.Status();
