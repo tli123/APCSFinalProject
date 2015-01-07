@@ -162,11 +162,48 @@ public class Basechar {
 	return Stat;
     }
 
+    public void Consolidate(){
+	for (int i=1; i<inventory.size()-1;i++){
+	    if (inventory.get(i)!=null && inventory.get(i-1)==null){
+		inventory.set(i-1, inventory.get(i));
+		inventory.set(i, null);
+	    }
+	}
+    }
+
+    public boolean IsInt(String str){
+	try {Integer.valueOf(str); return true;}
+	catch (Exception e){return false;}
+	    }
+
     public void displayInventory(){
 	System.out.println("This is your inventory:");
 	for (int i=0; i<inventory.size(); i++){
 	    System.out.println(i+". "+inventory.get(i));}
-	//add in the scanner options
+	System.out.println("Type the number corresponding to the item you want to use");
+	System.out.println("Type -1 to go back");
+	
+	int choice=0;
+	String Choice = "";
+	boolean Correct=true;
+	while (Correct){
+	    Scanner sc = new Scanner(System.in);
+	    Choice = sc.next();
+	    
+	    if (!IsInt(Choice)) {
+		System.out.println("This is not a corresponding number.");}
+	    else{
+		choice = Integer.valueOf(Choice);
+		if (choice <-1 || choice >= inventory.size()){
+		    System.out.println("This is not a corresponding number.");}
+	   	else{ Correct=false;}}//else
+	}
+	
+	//Some Converter of potion name to int to add to health
+
+	inventory.remove(choice);
+	Consolidate();
+
     }
 	
 }
