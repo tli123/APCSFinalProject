@@ -26,6 +26,6 @@ Period 1
 
 1/6/2015: Updated all classes with coins, deleted weapon dropping for coin dropping system, continued to work on shop, determined stats for bosses, monsters, adding multiple battles per level, fixed problems from adding more stats, commented out confirmation with loading and saving - 10 cap Tommy Rong
 
-1/7/2015: Worked on shop, methods for inventory are done but not tested Tommy Rong
+1/7/2015: Worked on shop, methods for inventory are done but not tested, added a conversion class that would convert potion name to health Tommy Rong
 
 Still need to work on: Levels (What happens in each level), more variety of monsters, shop

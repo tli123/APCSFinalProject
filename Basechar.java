@@ -94,8 +94,6 @@ public class Basechar {
 	    return true;}
 	return false;
     }
-
-    
     
     public void Gen(int Level){
 	health+=(health/2)*Level;
@@ -176,7 +174,7 @@ public class Basechar {
 	catch (Exception e){return false;}
 	    }
 
-    public void displayInventory(){
+    public void InventoryWork(){
 	System.out.println("This is your inventory:");
 	for (int i=0; i<inventory.size(); i++){
 	    System.out.println(i+". "+inventory.get(i));}
@@ -199,7 +197,13 @@ public class Basechar {
 	   	else{ Correct=false;}}//else
 	}
 	
-	//Some Converter of potion name to int to add to health
+	Conversion Con= new Conversion();
+	
+	int LimitHealth=health;
+	health=Con.Converter(inventory.get(choice), health);
+
+	if (health>LimitHealth){
+	    health=LimitHealth;}
 
 	inventory.remove(choice);
 	Consolidate();
