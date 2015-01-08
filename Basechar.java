@@ -9,7 +9,7 @@ public class Basechar {
     public int accuracy;
     public int evade;
     public String name;
-    public int weaponName;
+    public String weaponName;
     public int weaponStats;
     public String type;
     public int coins;

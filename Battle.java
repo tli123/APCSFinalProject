@@ -1,4 +1,4 @@
-
+import java.io.*;
 import java.util.*;
 
 public class Battle{
@@ -20,7 +20,7 @@ public class Battle{
 	    System.out.println(B.Attack(A));
 	    if (!NotDead(A)){
 		System.out.println("You lose!");
-		//A.health=HRestore;
+		A.health=HRestore;
 		return false;}
 	}
 	return false;
@@ -29,8 +29,24 @@ public class Battle{
     public boolean NotDead(Basechar A){
 	if (A.health>0){
 	    return true;}
+
 	else{ return false;}
     }
+
+    public void Effects(String type, String WeaponName){
+	Random Rand = new Random();
+	if (type.equals("warrior"){
+		if (WeaponName.equals("Bronze Sword"){
+		    }
+		    }
+	    else if (type.equals("rouge"){
+		}
+		else {
+		    }
+
+
+    
+	    }
 
     public static void main(String args[]){
 	Battle b=new Battle();

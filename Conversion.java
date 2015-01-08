@@ -1,19 +1,19 @@
 public class Conversion{
 
     public int Converter(String str, int health){
-	if (str.equals("Small Potion")){
+	if (str.equals("sp")){
 	    return 50;}
-	if (str.equals("Medium Potion")){
+	if (str.equals("mp")){
 	    return 80;}
-	if (str.equals("Big Potion")){
+	if (str.equals("bip")){
 	    return 150;}
-	if (str.equals("Red Potion")){
+	if (str.equals("rp")){
 	    return health/8;}
-	if (str.equals("Yellow Potion")){
+	if (str.equals("yp")){
 	    return health/4;}
-	if (str.equals("Blue Potion")){
+	if (str.equals("blp")){
 	    return health/2;}
-	if (str.equals("Green Potion")){
+	if (str.equals("gp")){
 	    return health;}
 	return health; //won't be gotten to
 }
