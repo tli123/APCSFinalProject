@@ -28,4 +28,6 @@ Period 1
 
 1/7/2015: Worked on shop, methods for inventory are done but not tested, added a conversion class that would convert potion name to health Tommy Rong
 
+1/8/2015: Continued to work on shop and implementing possible effects Tommy Rong
+
 Still need to work on: Levels (What happens in each level), more variety of monsters, shop

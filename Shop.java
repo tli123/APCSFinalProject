@@ -1,13 +1,24 @@
+import java.util.*;
+import java.io.*;
+
 public class Shop {
 
     public String type;
+    public String[] gitems;
     public String[] witems;
     public String[] mitems;
     public String[] ritems;
+    public int[] priceg;
     public int[] price;
 
     public Shop(String t) {
-	type = t;
+        type = t;
+	gitems = {"sp", "mp", "bip", "rp", "yp", "blp", "gp"};
+	priceg = {40, 60, 130, 100, 200, 400, 800}
+	witems = {"copper sword", "bronze sword", "silver sword", "gold sword", "platinum sword", "diamond sword", "copper armor", "bronze armor", "silver armor", "golden armor"};
+	mitems = {"ws", "fs", "ws", "es", "is", "gst", "fr", "ar", "nr", "gr"};
+	ritems = {"d","dk", "m", "lk", "dlk", "tlk", "la", "ba", "ka", "na"};
+	price = {600, 900, 1400, 2500, 5000, 10000, 1500, 1800, 2200, 5000};
     }
     
     public void Store () {
@@ -35,6 +46,46 @@ public class Shop {
 	    System.out.println("Bronze Armor (1800 coins)");
 	    System.out.println("Silver Armor (2200 coins)");
 	    System.out.println("Golden Armor (5000 coins)");
+	    Scanner sc = new Scanner(System.in);
+	    Choice=Choice.toLowerCase();
+	    String[] Check = {"copper sword", "bronze sword", "silver sword", "gold sword", "platinum sword", "diamond sword", "copper armor", "bronze armor", "silver armor", "golden armor"};
+	    if (!Arrays.asList(Check).contains(Choice)) {
+		System.out.println("This is not listed above. Enter something correct: ");
+	    }
+	    if (coins < ws
+	    if (Choice.equals("copper sword")) {
+		weaponStats = 10;
+	        weaponName = "cs";
+		coins = 
+	    }
+	    if (Choice.equals("bronze Sword")) {
+		weaponStats = 20;
+	    }
+	    if (Choice.equals("silver sword")) {
+		weaponStats = 30;
+	    }
+	    if (Choice.equals("gold sword")) {
+		weaponStats = 40;
+	    }
+	    if (Choice.equals("platinum sword")) {
+		weaponStats = 50;
+	    }
+	    if (Choice.equals("")) {
+		
+	    }
+	    if (Choice.equals("")) {
+
+	    }
+	    if (Choice.equals("")) {
+
+	    }
+	    if (Choice.equals("")) {
+
+	    }
+	    if (Choice.equals("")) {
+
+	    }
+	    
 	}
 
 	if (this.type.equals("Mage")) {
