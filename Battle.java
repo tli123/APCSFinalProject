@@ -14,6 +14,10 @@ public class Battle{
 	    if (Atk.equals("quit")){
 		System.exit(0);}
 	    System.out.println(A.Attack(B));
+
+	    if (A.weaponName.equals("")){
+		}
+	    
 	    if (!NotDead(B)){
 		A.health=HRestore;
 		return true;}
@@ -32,7 +36,7 @@ public class Battle{
 
 	else{ return false;}
     }
-
+    /*
     public void Effects(String type, String WeaponName){
 	Random Rand = new Random();
 	if (type.equals("warrior"){
@@ -44,7 +48,7 @@ public class Battle{
 		else {
 		    }
 
-
+    */
     
 	    }
 
