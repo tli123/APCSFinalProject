@@ -13,9 +13,11 @@ public class Basechar {
     public int weaponStats;
     public String type;
     public int coins;
+    public String armorName="none";
+    public int armorPoints=0;
     public ArrayList<String> inventory;
 
-    public Basechar(int h, int a, int d, int acc, int e, int WS, String n, String t, int c) {
+    public Basechar(int h, int a, int d, int acc, int e, int WS, String n, String t, int c int) {
 	this.health = h;
 	this.attack = a;
 	this.defense = d;
@@ -25,6 +27,7 @@ public class Basechar {
 	this.name = n;
        	this.type = t;
 	this.coins = c;
+	this.armorPoints = AP;
     }
 
     public String Attack(Basechar other){
@@ -147,16 +150,19 @@ public class Basechar {
     }
 
     public String[] GetStats(){
-	String[] Stat = new String[9];
+	String[] Stat = new String[11];
 	Stat[0]=String.valueOf(health);
 	Stat[1]=String.valueOf(attack);
 	Stat[2]=String.valueOf(defense);
 	Stat[3]=String.valueOf(accuracy);
 	Stat[4]=String.valueOf(evade);
 	Stat[5]=String.valueOf(weaponStats);
-	Stat[6]=name;
-	Stat[7]=type;
-	Stat[8]=String.valueOf(coins);
+	Stat[6]=weaponName;
+	Stat[7]=String.valueOf(armorPoints);
+	Stat[8]=armorName;
+	Stat[9]=name;
+	Stat[10]=type;
+	Stat[11]=String.valueOf(coins);
 	return Stat;
     }
 
@@ -208,6 +214,45 @@ public class Basechar {
 	inventory.remove(choice);
 	Consolidate();
 
+    }//lower accuracy, healing, lower attack, lower defense
+    //burn, drop defense freeze, lower accuracy
+    //poison, attack twice, lower attack, atack twice and lower attack, attack 3 time and instantly knock out
+    public void LowerAccuracy(int Chance, int PercentLowerBy){
+	Random Rand = new Random();
+	if (Chance>Rand.nextInt(100)){
+	    accuracy-=accuracy*PercentLowerBy;}
+    }
+    public void AttackHeal(int Chance, int MaxHealth){
+	Random Rand = new Random();
+	if (Chance>Rand.nextInt(100)){
+	    health+=health/10;}
+	if (health>MaxHealth){
+	    health=MaxHealth;}
+    }
+    public void LowerAttack(int Chance, int PercentLowerBy){
+	Random Rand = new Random();
+	if (Chance>Rand.nextInt(100)){
+	    attack-=attack*PercentLowerBy;}
+    }
+    public void LowerDefense(int Chance, int PercentLowerBy){
+	Random Rand = new Random();
+	if (Chance>Rand.nextInt(100)){
+	    defense-=defense*PercentLowerBy;}
+    }
+    public void Burn(int Chance, int PercentLowerBy){
+	Random Rand = new Random();
+	if (Chance>Rand.nextInt(100)){
+	    health-=health/10;}
+    }
+    public void Poison(int Chance){
+	Random Rand = new Random();
+	if (Chance>Rand.nextInt(100)){
+	    health-=health/10;}
+    }
+    public void InstaKill(int Chance){
+	Random Rand = new Random();
+	if (Chance>Rand.nextInt(100)){
+	    health=0;}
     }
 	
 }
