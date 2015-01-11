@@ -30,6 +30,6 @@ Period 1
 
 1/8/2015: Continued to work on shop and implementing possible effects Tommy Rong
 
-1/11/2015: Worked on dividing the shop into 2.
+1/11/2015: Worked on dividing the shop into 2. Finished choices. Tommy Rong
 
 Still need to work on: Levels (What happens in each level), more variety of monsters, shop
