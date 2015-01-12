@@ -2,7 +2,8 @@ import java.util.*;
 import java.io.*;
 
 public class Basechar {
-    
+
+    //Instance Variables
     public int health;
     public int attack;
     public int defense;
