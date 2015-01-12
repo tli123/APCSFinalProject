@@ -1,21 +1,28 @@
 public class Conversion{
 
+    //Converts potions from string to int to use for healing
     public int Converter(String str, int health){
 	if (str.equals("sp")){
-	    return 50;}
+	    return 50;
+	}
 	if (str.equals("mp")){
-	    return 80;}
+	    return 80;
+	}
 	if (str.equals("bip")){
-	    return 150;}
+	    return 150;
+	}
 	if (str.equals("rp")){
-	    return health/8;}
+	    return health/8;
+	}
 	if (str.equals("yp")){
-	    return health/4;}
+	    return health/4;
+	}
 	if (str.equals("blp")){
-	    return health/2;}
+	    return health/2;
+	}
 	if (str.equals("gp")){
-	    return health;}
+	    return health;
+	}
 	return health; //won't be gotten to
-}
-
+    }
 }
