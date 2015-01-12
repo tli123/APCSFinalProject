@@ -15,8 +15,16 @@ public class Battle{
 		System.exit(0);}
 	    System.out.println(A.Attack(B));
 
-	    if (A.weaponName.equals("")){
-		}
+	    if (A.weaponName.equals("bs")){
+		A.AttackHeal(5, A.health);}
+	    else if (A.weaponName.equals("ss")){
+		B.LowerAccuracy(10, 5);}
+	    else if (A.weaponName.equals("gs")){
+		B.LowerAttack(15, 10);}
+	    else if (A.weaponName.equals("ps")){
+		B.LowerDefense(20, 25);}
+	    else if (A.weaponName.equals("ds")){
+		B.InstaKill(10);}
 	    
 	    if (!NotDead(B)){
 		A.health=HRestore;
