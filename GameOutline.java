@@ -7,6 +7,7 @@ public class GameOutline{
 	int MonsterNum;
 	// Introduction + Credits
 
+	//Loads + Saves files
 	SaveLoad SL = new SaveLoad();
 	Warrior B = new Warrior("Rong");
 	if (SL.LS(1)){
@@ -20,6 +21,7 @@ public class GameOutline{
 
 	//Add a background info, i.e. why storm the dungeon
 
+	//Initiates Battle, get coins, etc
 	while(true){ // Overlord not dead
 
 	    MonsterNum=LevelNumber*5;
@@ -35,10 +37,13 @@ public class GameOutline{
 		    B.LevelingUp();
 		    if (SL.LS(2)){
 			SL.Write(B.GetStats());
-			System.out.println("You saved the game.");}
+			System.out.println("You saved the game.");
+		    }
 		}
-		else {LevelNumber-=1;
-		    MonsterNum=LevelNumber*5;}
+		else {
+		    LevelNumber -= 1;
+		    MonsterNum=LevelNumber*5;
+		}
 		
 	    }
 	    Battle Fight = new Battle();
@@ -56,7 +61,8 @@ public class GameOutline{
 	    System.out.println("You are now on level "+LevelNumber);
 	    if (LevelNumber>9){
 		System.out.println("You win the game");
-		break;}
+		break;
+	    }
 	}
 	    
 
