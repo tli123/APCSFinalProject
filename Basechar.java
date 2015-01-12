@@ -13,11 +13,11 @@ public class Basechar {
     public int weaponStats;
     public String type;
     public int coins;
-    public String armorName="none";
-    public int armorPoints=0;
+    public String armorName;
+    public int armorPoints;
     public ArrayList<String> inventory;
 
-    public Basechar(int h, int a, int d, int acc, int e, int WS, String n, String t, int c int) {
+    public Basechar(int h, int a, int d, int acc, int e, int WS, String n, String t, int c, String aN, int aP) {
 	this.health = h;
 	this.attack = a;
 	this.defense = d;
@@ -27,7 +27,8 @@ public class Basechar {
 	this.name = n;
        	this.type = t;
 	this.coins = c;
-	this.armorPoints = AP;
+	this.armor
+	this.armorPoints = aP;
     }
 
     public String Attack(Basechar other){
