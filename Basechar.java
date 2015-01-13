@@ -288,6 +288,12 @@ public class Basechar {
 	    defense -= defense*PercentLowerBy;
 	}
     }
+    public void LowerEvade(int Chance, int PercentLowerBy){
+	Random Rand = new Random();
+	if (Chance > Rand.nextInt(100)){
+	    evade -= evade*PercentLowerBy;
+	}
+    }
     public void Burn(int Chance, int PercentLowerBy){
 	Random Rand = new Random();
 	if (Chance > Rand.nextInt(100)){

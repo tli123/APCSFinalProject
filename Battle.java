@@ -42,6 +42,27 @@ public class Battle{
 		B.LowerAccuracy(10,15);
 	    }
 	    else if (A.weaponName.equals("d")){
+		B.Poison(2);
+	    }
+	    else if (A.weaponName.equals("dk")){
+		//attack twice
+	    }
+	    else if (A.weaponName.equals("m")){
+		B.LowerAttack(5, 5);
+	    }
+	    else if (A.weaponName.equals("lk")){
+		B.LowerEvade(5,5);
+	    }
+	    else if (A.weaponName.equals("dlk")){
+		//attack twice
+		B.LowerDefense(10,5);
+	    }
+	    else if (A.weaponName.equals("tlk")){
+		//attack thrice
+		B.InstaKill(1);
+	    }
+	    else if (A.weaponName.equals("dk")){
+		//attack twice
 	    }
 	    
 	    if (!NotDead(B)){

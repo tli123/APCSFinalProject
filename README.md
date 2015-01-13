@@ -33,6 +33,6 @@ Period 1
 
 1/11/2015: Worked on dividing the shop into 2. Finished choices. Tommy Rong
 
-1/12/2015: Update on constructors, updating shop to work with inventory Tommy Rong
+1/12/2015: Update on constructors, updating shop to work with inventory. Finished weapon effects in battle, excluding extra attacks Tommy Rong
 
-Still need to work on: Levels (What happens in each level), more variety of monsters, shop
+Still need to work on: Levels (What happens in each level), more variety of monsters, shop, more attacks
