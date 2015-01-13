@@ -20,7 +20,8 @@ public class SaveLoad{
 	    }
 	    scanner.close();
 	} catch (Exception e) {
-	    System.out.println("File not found");}
+	    System.out.println("File not found");
+	}
 	return Arr;
     }
 
@@ -106,7 +107,8 @@ public class SaveLoad{
 	    String[] Check = {"YES", "NO", "QUIT"};
 	    if (!Arrays.asList(Check).contains(Choice)) {
 		System.out.println("Type yes or no only");}
-	    else{return true;}	}
+	    else{return true;}	
+	}
 	
 	/*
 	while(true){

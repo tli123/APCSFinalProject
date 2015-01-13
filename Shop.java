@@ -228,9 +228,9 @@ public class Shop {
 				    System.out.println("Dagger: A blunt dagger that has a 2% chance to poison the opponent. Does slightly more damage than the knife. (600 coins)");
 				    System.out.println("Double Knives: Allows you to attack twice in one turn. Combined damage does slightly more than the Dagger. (900 coins)");
 				    System.out.println("Machete: A larger knife that has a 5% chance to lower the opponent's attack by 5%. Much stronger than the Double Knife. (1400 coins)");
-				    System.out.println("Long Knife: A thinner, longer knife that can lower the opponent's dexterity by 2% with a 5% chance. Stronger than the Machete. (2500 coins)");
-				    System.out.println("Double Long Knives: Allows you to attack twice in one turn. Each hit has 2% chance to lower the defense of the opponent by 3%. (5000 coins)");
-				    System.out.println("Triple Long Knives: Allows you to attack three times in one turn. Each knife has a 0.005% chance to instantly knock out the opponent. Does not work on bosses. (10000 coins)");
+				    System.out.println("Long Knife: A thinner, longer knife that can lower the opponent's dexterity by 5% with a 5% chance. Stronger than the Machete. (2500 coins)");
+				    System.out.println("Double Long Knives: Allows you to attack twice in one turn. Each hit has 10% chance to lower the defense of the opponent by 5%. (5000 coins)");
+				    System.out.println("Triple Long Knives: Allows you to attack three times in one turn. Each knife has a 1% chance to instantly knock out the opponent. Does not work on bosses. (10000 coins)");
 				    System.out.println("Leather Armor (1500 coins)");
 				    System.out.println("Black Armor (1800 coins)");
 				    System.out.println("Koskin Armor (2500 coins");

@@ -17,8 +17,10 @@ public class MonsterGen{
 	Monster.Stats();
     }
 
-/*NOTE: The code above will be added to the main Stuyablo following 
-	the outline, and this class will be scrapped */
+    /*
+      NOTE: The code above will be added to the main Stuyablo following 
+      the outline, and this class will be scrapped 
+    */
 
 
     public static void main(String args[]){
