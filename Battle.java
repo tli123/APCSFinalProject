@@ -33,7 +33,7 @@ public class Battle{
 		B.InstaKill(10);
 	    }
 	    else if (A.weaponName.equals("fs")){
-		B.Burn(5);
+		B.Burn(5,5);
 	    }
 	    else if (A.weaponName.equals("es")){
 		B.LowerDefense(10,10);

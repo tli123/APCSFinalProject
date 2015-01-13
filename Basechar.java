@@ -254,7 +254,7 @@ public class Basechar {
 	    health = LimitHealth;}
 
 	inventory.remove(choice);
-	Consolidate();
+	//Consolidate();
 
     }
 
