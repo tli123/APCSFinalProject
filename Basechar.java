@@ -194,7 +194,7 @@ public class Basechar {
 	return Stat;
     }
 
-    //Inventory Deletion
+    /*  Uneeded, an arrayList consolidates by itself
     public void Consolidate(){
 	for (int i=1; i<inventory.size()-1;i++){
 	    if (inventory.get(i)!=null && inventory.get(i-1)==null){
@@ -203,6 +203,7 @@ public class Basechar {
 	    }
 	}
     }
+    */
 
     //Checks if input is a number
     public boolean IsInt(String str){
