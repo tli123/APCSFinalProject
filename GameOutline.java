@@ -1,4 +1,5 @@
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class GameOutline{
 
@@ -56,8 +57,9 @@ public class GameOutline{
 	    
 	    System.out.println("You defeated the boss");
 
-		
-	    LevelNumber+=1;
+	    GameOutline M = new GameOutline();
+	    LevelNumber = M.Moving(LevelNumber);
+	    
 	    System.out.println("You are now on level "+LevelNumber);
 	    if (LevelNumber>9){
 		System.out.println("You win the game");
@@ -67,6 +69,32 @@ public class GameOutline{
 	    
 
     }
+
+    public int Moving(int Level){
+	System.out.println("You defeated the dungeon!");
+	System.out.println("Would you like to advance a level, retreat a level, or stay on the same level?");
+
+	String Choice = "";
+	while (true){
+	    Scanner sc = new Scanner(System.in);
+	    Choice = sc.next();
+	    Choice = Choice.toUpperCase();
+	    String[] Check = {"QUIT", "ADVANCE", "RETREAT", "STAY"};
+	    if (!Arrays.asList(Check).contains(Choice)) {
+		System.out.println("This is not advance, retreat, nor stay");}
+	    else {break;}
+	}
+	if (Choice.equals("QUIT")){
+	    System.exit(0);
+	}
+	if (Choice.equals("ADVANCE")){
+	    return Level+=1;
+	}
+	else if (Choice.equals("RETREAT")){
+	    return Level-=1;
+	}
+	else{
+	    return Level;}}
 
 /*
     public static void main(String args[]){

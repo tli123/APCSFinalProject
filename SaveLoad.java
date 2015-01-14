@@ -107,6 +107,10 @@ public class SaveLoad{
 	    String[] Check = {"YES", "NO", "QUIT"};
 	    if (!Arrays.asList(Check).contains(Choice)) {
 		System.out.println("Type yes or no only");}
+	    if (Choice.equals("QUIT")){
+		System.exit(0);}
+	    if (Choice.equals("NO")){
+		return false;}
 	    else{return true;}	
 	}
 	
