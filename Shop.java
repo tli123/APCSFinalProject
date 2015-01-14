@@ -10,6 +10,7 @@ public class Shop {
     public String[] ritems;
     public int[] priceg;
     public int[] price;
+    public int[] power;
 
     public Shop(String t) {
         type = t;
@@ -19,7 +20,31 @@ public class Shop {
 	mitems = {"wooden staff", "fire staff", "water staff", "earth staff", "ice staff", "golden staff", "fire robe", "aqua robe", "nature robe", "icy robe"};
 	ritems = {"dagger","double knives", "machete", "long knife", "double long knife", "triple long knives", "leather armor", "black armor", "koskin armor", "ninja armor"};
 	price = {600, 900, 1400, 2500, 5000, 10000, 1500, 1800, 2200, 5000};
+	power = {10, 20, 30, 40, 50, 60, 15, 30, 45, 60};
     }
+
+    public void check(String name, String type) {
+	int pos;
+	if (witems.indexOf(name) >= 0) {
+	    pos = witems.indexOf(name);
+	}
+	if (ritems.indexOf(name) >= 0) {
+	    pos = ritems.indexOf(name);
+	}
+	if (mitems.indexOf(name) >= 0) {
+	    pos = mitems.indexOf(name);
+	}
+	if (type.equals("weapon")) {
+	    this.weaponName = name;
+	    this.coins = coins = price[pos];
+	    this.weaponStats = power[pos];
+	}
+	if (type.equals("armor")) {
+	    this.armorName = name;
+	    this.coins = coins = price[pos];
+	    this.armorStats = power[pos];
+	}
+    }			
     
     public void Store () {
 	System.out.println("Welcome to the shop!");
@@ -66,9 +91,7 @@ public class Shop {
 					//insert what do after 
 				    }
 				    else if (Choice.equals("copper sword")) {
-					this.weaponStats = 10;
-					this.weaponName = "cs";
-					this.coins = coins - price.get(witems.indexOf(Choice)); 
+					check("copper sword", "weapon");
 					break;
 				    } 
 				    else if (Choice.equals("bronze Sword")) {
