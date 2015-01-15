@@ -11,12 +11,18 @@ public class GameOutline{
 	//Loads + Saves files
 	SaveLoad SL = new SaveLoad();
 	Warrior B = new Warrior("Rong");
+
 	if (SL.LS(1)){
-	    B.ImpleStats(SL.Load());}
+	    B.ImpleStats(SL.Load());
+	    String[] LevAndMon= SL.Load2();
+	    LevelNumber=Integer.valueOf(LevAndMon[0]);
+	    MonsterNum=Integer.valueOf(LevAndMon[1]);}
+
 	else{
 	    GetName N=new GetName();
 	    String name=N.Name();
-	    B = new Warrior(name);}
+	    B = new Warrior(name);
+	    MonsterNum=LevelNumber*5;}
 
 	System.out.println();
 
@@ -25,7 +31,7 @@ public class GameOutline{
 	//Initiates Battle, get coins, etc
 	while(true){ // Overlord not dead
 
-	    MonsterNum=LevelNumber*5;
+
 	    while (MonsterNum>0){ //Dungeon not cleared
 		CannonFodder A = new CannonFodder();
 		A.Gen(LevelNumber);
@@ -37,7 +43,7 @@ public class GameOutline{
 		    B.coins+=A.coins;
 		    B.LevelingUp();
 		    if (SL.LS(2)){
-			SL.Write(B.GetStats());
+			SL.Write(B.GetStats(), LevelNumber, MonsterNum);
 			System.out.println("You saved the game.");
 		    }
 		}
@@ -59,6 +65,7 @@ public class GameOutline{
 
 	    GameOutline M = new GameOutline();
 	    LevelNumber = M.Moving(LevelNumber);
+	    MonsterNum=LevelNumber*5;
 	    
 	    System.out.println("You are now on level "+LevelNumber);
 	    if (LevelNumber>9){

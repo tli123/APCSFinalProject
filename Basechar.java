@@ -165,20 +165,25 @@ public class Basechar {
 
     //Takes stats in the save file and updates them to Basechar
     public void ImpleStats(String[] Stats){
+	for (int i=0;i<Stats.length;i++){
+	System.out.println(Stats[i]);}
 	health=Integer.valueOf(Stats[0]);
 	attack=Integer.valueOf(Stats[1]);
 	defense=Integer.valueOf(Stats[2]);
 	accuracy=Integer.valueOf(Stats[3]);
 	evade=Integer.valueOf(Stats[4]);
 	weaponStats=Integer.valueOf(Stats[5]);
-	name=Stats[6];
-	type=Stats[7];
-	coins=Integer.valueOf(Stats[8]);
+	weaponName=Stats[6];
+	armorPoints=Integer.valueOf(Stats[7]);
+	armorName=Stats[8];
+	name=Stats[9];
+	type=Stats[10];
+	coins=Integer.valueOf(Stats[11]);
     }
 
-    //Get method to implement the stats
+    //Gets the stats to prep to put into save file
     public String[] GetStats(){
-	String[] Stat = new String[11];
+	String[] Stat = new String[12];
 	Stat[0]=String.valueOf(health);
 	Stat[1]=String.valueOf(attack);
 	Stat[2]=String.valueOf(defense);

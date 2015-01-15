@@ -11,10 +11,12 @@ public class SaveLoad{
 
     public String[] Load(){
 	File file = new File("save.txt");
-	String[] Arr = new String [9]; //This is the number of stats
+	String[] Arr = new String [12]; //This is the number of stats
 	try{
 	    Scanner scanner = new Scanner(file);
-	    for (int i=0; i<9; i++){
+	    scanner.nextLine();
+	    scanner.nextLine();
+	    for (int i=0; i<12; i++){ //first two are level and monster left
 		//while (scanner.hasNextLine()){
 		Arr[i]=scanner.nextLine();
 	    }
@@ -25,10 +27,25 @@ public class SaveLoad{
 	return Arr;
     }
 
+    public String[] Load2(){
+	File file = new File("save.txt");
+	String[] Arr = new String [2];
+	try{
+	    Scanner scanner = new Scanner(file);
+	    for (int i=0; i<2; i++){ //Level, then Monsters left
+		Arr[i]=scanner.nextLine();
+	    }
+	    scanner.close();
+	} catch (Exception e) {
+	    System.out.println("File not found");
+	}
+	return Arr;
+    }
 
 //1.Health 2.Attack 3.Defense 4.Accuracy 5.Evade 6. weaponsStats
+//Copied from 2 StackOverflow questions and deleted a few lines
 
-    public void Write(String[] Arr) throws Exception{
+    public void Write(String[] Arr, int Level, int MonLeft) throws Exception{
 	/*deletes everything inside*/
 	PrintWriter writer = new PrintWriter("save.txt");
 	writer.print("");
@@ -42,6 +59,12 @@ public class SaveLoad{
 	try{
 	    bfr=new BufferedReader(new FileReader(file));
 	    FileWriter fw=new FileWriter(file,true);    
+
+	    fw.append(String.valueOf(Level));
+	    fw.append("\n");
+	    fw.append(String.valueOf(MonLeft));
+	    fw.append("\n");
+
 	    for (int i = 0; i<Arr.length; i++){
 		fw.append(String.valueOf(Arr[i]));
 		fw.append("\n");

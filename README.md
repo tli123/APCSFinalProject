@@ -35,4 +35,6 @@ Period 1
 
 1/12/2015: Update on constructors, updating shop to work with inventory. Finished weapon effects in battle, excluding extra attacks Tommy Rong
 
+1/14/2015: Save now saves progress, added the option of advancing in level or retreating or staying -Rong Tommy
+
 Still need to work on: Levels (What happens in each level), more variety of monsters, shop, more attacks
