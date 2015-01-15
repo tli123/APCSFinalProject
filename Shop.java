@@ -3,7 +3,6 @@ import java.io.*;
 
 public class Shop {
 
-    public String type;
     public String[] gitems;
     public String[] witems;
     public String[] mitems;
@@ -23,7 +22,7 @@ public class Shop {
 	power = {10, 20, 30, 40, 50, 60, 15, 30, 45, 60};
     }
 
-    public void check(String name, String type) {
+    public void check(String name, String what) {
 	int pos;
 	if (witems.indexOf(name) >= 0) {
 	    pos = witems.indexOf(name);
@@ -88,64 +87,15 @@ public class Shop {
 				    if (Choice.equals("back")){break;}
 				    if (coins < price.get(witems.indexOf(Choice))) {
 					System.out.println("You do not have enough coins to purchase this item.");
-					//insert what do after 
 				    }
-				    else if (Choice.equals("copper sword")) {
-					check("copper sword", "weapon");
-					break;
-				    } 
-				    else if (Choice.equals("bronze Sword")) {
-					this.weaponStats = 20;
-					this.weaponName = "bs";
-					this.coins = coins - price.get(witems.indexOf(Choice)); 
-					break;
-				    } 
-				    else if (Choice.equals("silver sword")) {
-					this.weaponStats = 30;
-					this.weaponName = "ss";
-					this.coins = coins - price.get(witems.indexOf(Choice)); 
-					break;
-				    }
-				    else if (Choice.equals("gold sword")) {
-					this.weaponStats = 40;
-					this.weaponName = "gs";
-					this.coins = coins - price.get(witems.indexOf(Choice)); 
-					break;
-				    } 
-				    else if (Choice.equals("platinum sword")) {
-					this.weaponStats = 50;
-					this.weaponName = "ps";
-					this.coins = coins - price.get(witems.indexOf(Choice)); 
-					break;
-				    } 
-				    else if (Choice.equals("diamond sword")) {
-					this.weaponStats = 60;
-					this.weaponName = "ds";
-					this.coins = coins - price.get(witems.indexOf(Choice));
-					break; 
-				    } 
-				    else if (Choice.equals("copper armor")) {
-					this.armorPoints = 15;
-					this.armorName = "ca";
-					this.coins = coins - price.get(witems.indexOf(Choice)); 
-					break;
-				    } 
-				    else if (Choice.equals("bronze armor")) {
-					this.armorPoints = 30;
-					this.armorName = "ba";
-					this.coins = coins - price.get(witems.indexOf(Choice)); 
-					break;
-				    } 
-				    else if (Choice.equals("silver armor")) {
-					this.armorPoints = 45;
-					this.armorName = "sa";
-					this.coins = coins - price.get(witems.indexOf(Choice)); 
-					break;
-				    } 
-				    else if (Choice.equals("golden armor")) {
-					this.armorPoints = 60;
-					this.armorName = "ga";
-					this.coins = coins - price.get(witems.indexOf(Choice)); 
+
+				    else {
+					if (witems.indexOf(Choice) < 6) {
+					    check(Choice, "weapon");
+					}
+					else {
+					    check(Choice, "armor");
+					}
 					break;
 				    }
 				}
@@ -172,8 +122,10 @@ public class Shop {
 
 					if (!Arrays.asList(mitems).contains(Choice) || Choice.equals("back")) {
 					    System.out.println("This is not listed above. Enter something correct: ");
-					}else {break;}
-
+					}
+					else {
+					    break;
+					}
 				    }
 
 				    if (Choice.equals("back")){
@@ -184,64 +136,13 @@ public class Shop {
 					break;
 					//insert what do after 
 				    }
-				    else if (Choice.equals("wooden staff")) {
-					this.weaponStats = 10;
-					this.weaponName = "ws";
-					this.coins = coins - price.get(mitems.indexOf(Choice)); 
-					break;
-				    }
-				    else if (Choice.equals("fire staff")) {
-					this.weaponStats = 20;
-					this.weaponName = "fs";
-					this.coins = coins - price.get(mitems.indexOf(Choice)); 
-					break;
-				    }
-				    else if (Choice.equals("water staff")) {
-					this.weaponStats = 30;
-					this.weaponName = "wos";
-					this.coins = coins - price.get(mitems.indexOf(Choice)); 
-					break;
-				    }
-				    else if (Choice.equals("earth staff")) {
-					this.weaponStats = 40;
-					this.weaponName = "es";
-					this.coins = coins - price.get(mitems.indexOf(Choice)); 
-					break;
-				    }
-				    else if (Choice.equals("ice staff")) {
-					this.weaponStats = 50;
-					this.weaponName = "is";
-					this.coins = coins - price.get(mitems.indexOf(Choice)); 
-					break;
-				    }
-				    else if (Choice.equals("golden staff")) {
-					this.weaponStats = 60;
-					this.weaponName = "gos";
-					this.coins = coins - price.get(mitems.indexOf(Choice)); 
-					break;
-				    }
-				    else if (Choice.equals("fire robe")) {
-					this.armorPoints = 15;
-					this.armorName = "fr";
-					this.coins = coins - price.get(mitems.indexOf(Choice)); 
-					break;
-				    }
-				    else if (Choice.equals("aqua robe")) {
-					this.armorPoints = 30;
-					this.armorName = "ar";
-					this.coins = coins - price.get(mitems.indexOf(Choice)); 
-					break;
-				    }
-				    else if (Choice.equals("nature robe")) {
-					this.armorPoints = 45;
-					this.armorName = "nr";
-					this.coins = coins - price.get(mitems.indexOf(Choice)); 
-					break;
-				    }
-				    else if (Choice.equals("icy robe")) {
-					this.armorPoints = 60;
-					this.armorName = "ir";
-					this.coins = coins - price.get(mitems.indexOf(Choice)); 
+				    else {
+					if (mitems.indexOf(Choice) < 6) {
+					    check(Choice, "weapon");
+					}
+					else {
+					    check(Choice, "armor");
+					}
 					break;
 				    }
 				}
@@ -263,106 +164,46 @@ public class Shop {
 				    Choice=Choice.toLowerCase();
 				    if (!Arrays.asList(witems).contains(Choice) || Choice.equals("back")) {
 					System.out.println("This is not listed above. Enter something correct: ");
-				    } else {break;}
+				    } 
+				    else {
+					break;
+				    }
 
-				    if (Choice.equals("back"){
-					    break;}
-					if (coins < price.get(ritems.indexOf(Choice))) {
-					    System.out.println("You do not have enough coins to purchase this item.");
+				    if (Choice.equals("back")){
 					    break;
-					    //insert what do after 
+				    }
+				    if (coins < price.get(ritems.indexOf(Choice))) {
+					System.out.println("You do not have enough coins to purchase this item.");
+					break;
+					//insert what do after 
+				    }
+				    else {
+					if (ritems.indexOf(Choice) < 6) {
+					    check(Choice, "weapon");
 					}
-					else if (Choice.equals("dagger")) {
-					    this.weaponStats = 10;
-					    this.weaponName = "d";
-					    this.coins = coins - price.get(ritems.indexOf(Choice)); 
-					    break;
+					else {
+					    check(Choice, "armor");
 					}
-					else if (Choice.equals("double knives")) {
-					    this.weaponStats = 20;
-					    this.weaponName = "dk";
-					    this.coins = coins - price.get(ritems.indexOf(Choice)); 
-					    break;
-					}
-					else if (Choice.equals("machete")) {
-					    this.weaponStats = 30;
-					    this.weaponName = "m";
-					    this.coins = coins - price.get(ritems.indexOf(Choice)); 
-					    break;
-					}
-					else if (Choice.equals("long knife")) {
-					    this.weaponStats = 40;
-					    this.weaponName = "lk";
-					    this.coins = coins - price.get(ritems.indexOf(Choice)); 
-					    break;
-					}
-					else if (Choice.equals("double long knives")) {
-					    this.weaponStats = 50;
-					    this.weaponName = "dlk";
-					    this.coins = coins - price.get(ritems.indexOf(Choice)); 
-					    break;
-					}
-					else if (Choice.equals("triple long knives")) {
-					    this.weaponStats = 60;
-					    this.weaponName = "tlk";
-					    this.coins = coins - price.get(ritems.indexOf(Choice)); 
-					    break;
-					}
-					else if (Choice.equals("leather armor")) {
-					    this.armorPoints = 15;
-					    this.armorName = "la";
-					    this.coins = coins - price.get(ritems.indexOf(Choice)); 
-					    break;
-					}
-					else if (Choice.equals("black armor")) {
-					    this.armorPoints = 30;
-					    this.armorName = "ba";
-					    this.coins = coins - price.get(ritems.indexOf(Choice)); 
-					    break;
-					}
-					else if (Choice.equals("koskin armor")) {
-					    this.armorPoints = 45;
-					    this.armorName = "ka";
-					    this.coins = coins - price.get(ritems.indexOf(Choice)); 
-					    break;
-					}
-					else if (Choice.equals("ninja robe")) {
-					    this.armorPoints = 60;
-					    this.armorName = "na";
-					    this.coins = coins - price.get(mitems.indexOf(Choice)); 
-					    break;
-					}
-					}
-
-				}//choice is equal to one
-
-				else {//choice == two --++--
-
-				    System.out.println("General Shop:");
-				    System.out.println("Small Potion: Restores 50 health. (40 coins)");
-				    System.out.println("Medium Potion: Restores 80 health. (60 coins)");
-				    System.out.println("Big Potion: Restores 150 health. (130 coins)");
-				    System.out.println("Red Potion: Restores 1/8 of your health. (100 coins)");
-				    System.out.println("Yellow Potion: Restores 1/4 of your health. (200 coins)");
-				    System.out.println("Blue Potion: Restores 1/2 of your health. (400 coins)");
-				    System.out.println("Green Potion. Restores all of your health. (800 coins)");
-				    System.out.println("");
+					break;
+				    }
 				}
-
-			    }//else on top when choice is == 2  --++--
-
-			    else {  //wrong choice
-				System.out.println("You wrote something wrong");
 			    }
+			}
+			
+			}//else on top when choice is == 2  --++--
+
+			else {  //wrong choice
+			    System.out.println("You wrote something wrong");
+			}
 	
 			}//closes the if statement that asked if they typed it right **++
 
-			System.out.println("Do you want to do anything else?")
+		    System.out.println("Do you want to do anything else?")
 
 			Scanner sc = new Scanner(System.in);
-			Choice=Choice.toLowerCase();
+		    Choice=Choice.toLowerCase();
 	
-			if (Choice.equals("yes"){}
+		    if (Choice.equals("yes"){}
 	else {break;}
 	}//while true statment
 	}//funtion end
