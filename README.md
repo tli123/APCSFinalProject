@@ -37,4 +37,6 @@ Period 1
 
 1/14/2015: Save now saves progress, added the option of advancing in level or retreating or staying -Rong Tommy
 
+1/15/2015: Cleaned up shop, bug fixes
+
 Still need to work on: Levels (What happens in each level), more variety of monsters, shop, more attacks
