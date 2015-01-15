@@ -46,7 +46,7 @@ public class Basechar {
     public String StrongAttack(Basechar other){
 	if (didHit(accuracy/2)){
 	    other.health = other.health - this.attack -this.attack -this.attack ;
-	    return (name+ " attacked " +other.name + " and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
+	    return (name+ " attacked " +other.name + " recklessly and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
 	}
 	else{
 	    return (name+ " attacked and missed");

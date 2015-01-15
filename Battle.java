@@ -12,10 +12,16 @@ public class Battle{
 	    B.Status();
 	    Scanner sc = new Scanner(System.in);
 	    String Atk = sc.nextLine();
-	    if (Atk.equals("quit")){
-		System.exit(0);
-	    }
-	    System.out.println(A.Attack(B));
+	    Atk=Atk.toUpperCase();
+	    if (!Atk.equals("QUIT")&&!Atk.equals("ATTACK")&&!Atk.equals("STRONG ATTACK")&&!Atk.equals("")){
+		System.out.println("You typed something wrong, your move has been invalided");}
+	    else {
+	    if (Atk.equals("QUIT")){
+		System.exit(0);}
+	    else if (Atk.equals("STRONG ATTACK")){
+		System.out.println(A.StrongAttack(B));}
+	    else{
+		 System.out.println(A.Attack(B));}}
 
 	    if (A.weaponName.equals("bs")||A.weaponName.equals("ws")){
 		A.AttackHeal(5, A.health);
