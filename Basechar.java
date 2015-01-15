@@ -43,6 +43,16 @@ public class Basechar {
 	    return (name+ " attacked and missed");
 	}
     }
+    public String StrongAttack(Basechar other){
+	if (didHit(accuracy/2)){
+	    other.health = other.health - this.attack -this.attack -this.attack ;
+	    return (name+ " attacked " +other.name + " and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
+	}
+	else{
+	    return (name+ " attacked and missed");
+	}
+    }
+    
 
     //Uses accuracy and dexterity to determine if the attack hit
     public boolean didHit(int chance){
