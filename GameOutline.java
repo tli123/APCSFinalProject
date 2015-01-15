@@ -72,8 +72,12 @@ public class GameOutline{
 		System.out.println("You win the game");
 		break;
 	    }
-	}
 	    
+	}
+	System.out.println("You are now on the last level of the game.....");
+	System.out.println("You have done a good job getting this far.....");
+	System.out.println("But everything ends NOW!");
+	
 
     }
 
