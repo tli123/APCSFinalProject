@@ -139,6 +139,7 @@ public class Basechar {
 	accuracy+=Level;
 	evade+=Level;
 	weaponStats=weaponStats*Level;
+	coins=coins*Level;
 
 	Random R=new Random();
 	health+=R.nextInt(Level*3);
@@ -157,6 +158,7 @@ public class Basechar {
 	accuracy+=2*Level;
 	evade+=2*Level;
 	weaponStats=weaponStats*Level;
+	coins=coins*Level;
 
 	Random R=new Random();
 	health+=R.nextInt(Level*3);
@@ -175,8 +177,8 @@ public class Basechar {
 
     //Takes stats in the save file and updates them to Basechar
     public void ImpleStats(String[] Stats){
-	for (int i=0;i<Stats.length;i++){
-	System.out.println(Stats[i]);}
+	//for (int i=0;i<Stats.length;i++){
+	//System.out.println(Stats[i]);}
 	health=Integer.valueOf(Stats[0]);
 	attack=Integer.valueOf(Stats[1]);
 	defense=Integer.valueOf(Stats[2]);

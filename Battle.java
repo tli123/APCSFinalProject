@@ -23,52 +23,49 @@ public class Battle{
 	    else{
 		 System.out.println(A.Attack(B));}}
 
-	    if (A.weaponName.equals("bs")||A.weaponName.equals("ws")){
+	    if (A.weaponName.equals("bronze sword")||A.weaponName.equals("wooden staff")){
 		A.AttackHeal(5, A.health);
 	    }
-	    else if (A.weaponName.equals("ss")){
+	    else if (A.weaponName.equals("silver sword")){
 		B.LowerAccuracy(10, 5);
 	    }
-	    else if (A.weaponName.equals("gs")){
+	    else if (A.weaponName.equals("gold sword")){
 		B.LowerAttack(15, 10);
 	    }
-	    else if (A.weaponName.equals("ps")){
+	    else if (A.weaponName.equals("platinum sword")){
 		B.LowerDefense(20, 25);
 	    }
-	    else if (A.weaponName.equals("ds")){
+	    else if (A.weaponName.equals("diamond sword")){
 		B.InstaKill(10);
 	    }
-	    else if (A.weaponName.equals("fs")){
+	    else if (A.weaponName.equals("fire staff")){
 		B.Burn(5,5);
 	    }
-	    else if (A.weaponName.equals("es")){
+	    else if (A.weaponName.equals("earth staff")){
 		B.LowerDefense(10,10);
 	    }
-	    else if (A.weaponName.equals("gs")){
+	    else if (A.weaponName.equals("gold staff")){
 		B.LowerAccuracy(10,15);
 	    }
-	    else if (A.weaponName.equals("d")){
+	    else if (A.weaponName.equals("dagger")){
 		B.Poison(2);
 	    }
-	    else if (A.weaponName.equals("dk")){
+	    else if (A.weaponName.equals("double knife")){
 		//attack twice
 	    }
-	    else if (A.weaponName.equals("m")){
+	    else if (A.weaponName.equals("machete")){
 		B.LowerAttack(5, 5);
 	    }
-	    else if (A.weaponName.equals("lk")){
+	    else if (A.weaponName.equals("long knife")){
 		B.LowerEvade(5,5);
 	    }
-	    else if (A.weaponName.equals("dlk")){
+	    else if (A.weaponName.equals("double long knife")){
 		//attack twice
 		B.LowerDefense(10,5);
 	    }
-	    else if (A.weaponName.equals("tlk")){
+	    else if (A.weaponName.equals("triple long knife")){
 		//attack thrice
 		B.InstaKill(1);
-	    }
-	    else if (A.weaponName.equals("dk")){
-		//attack twice
 	    }
 	    
 	    if (!NotDead(B)){
@@ -85,7 +82,7 @@ public class Battle{
 	return false;
     }
 
-    //Allows player to heal if necessary
+    //Tells if something is dead or not
     public boolean NotDead(Basechar A){
 	if (A.health>0){
 	    return true;
@@ -95,7 +92,7 @@ public class Battle{
 	}
     }
     
-    //Main Function
+    //Example of battle
     public static void main(String args[]){
 	Battle b = new Battle();
 	Warrior w1 = new Warrior("Knight");

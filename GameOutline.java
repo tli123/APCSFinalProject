@@ -31,6 +31,7 @@ public class GameOutline{
 	//Initiates Battle, get coins, etc
 	while(true){ // Overlord not dead
 
+	while(LevelNumber<10){
 
 	    while (MonsterNum>0){ //Dungeon not cleared
 		CannonFodder A = new CannonFodder();
@@ -46,37 +47,54 @@ public class GameOutline{
 			SL.Write(B.GetStats(), LevelNumber, MonsterNum);
 			System.out.println("You saved the game.");
 		    }
-		}
+		}//upper fighting if
 		else {
 		    LevelNumber -= 1;
 		    MonsterNum=LevelNumber*5;
 		}
-		
-	    }
+	    }//MonsterNum>0
+
 	    Battle Fight = new Battle();
 	    Boss A = new Boss();
 	    A.BossGen(LevelNumber);
+
 	    if(Fight.battle(B, A)){
 		B.LevelingUp();
 		B.coins+=A.coins;
-	    }
-	    
 	    System.out.println("You defeated the boss");
 
 	    GameOutline M = new GameOutline();
 	    LevelNumber = M.Moving(LevelNumber);
 	    MonsterNum=LevelNumber*5;
-	    
+	    }else{//fight lost
+		LevelNumber-=1;}
+
+	    MonsterNum=LevelNumber*5;
 	    System.out.println("You are now on level "+LevelNumber);
-	    if (LevelNumber>9){
-		System.out.println("You win the game");
-		break;
-	    }
 	    
-	}
+	    
+	}//while(LevelNumber<10
 	System.out.println("You are now on the last level of the game.....");
 	System.out.println("You have done a good job getting this far.....");
 	System.out.println("But everything ends NOW!");
+
+	Overlord A=new Overlord();
+	A.Gen(LevelNumber);
+	Battle fight = new Battle();
+	if (fight.battle(B,A)){
+	    B.LevelingUp();
+	    B.coins+=A.coins;
+	    System.out.println("You have defeated the OverLord");
+	    System.out.println("Your game has been saved and once you load, you will be back on level 9");
+	    System.out.println("Thanks for playing");
+	    SL.Write(B.GetStats(), LevelNumber-1, LevelNumber*5-5);
+	    System.exit(0);}
+	else {
+	    LevelNumber -= 1;
+	    MonsterNum=LevelNumber*5;
+	}
+    	}//while(true)
+	    
 	
 
     }

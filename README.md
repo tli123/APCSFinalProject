@@ -35,8 +35,8 @@ Period 1
 
 1/12/2015: Update on constructors, updating shop to work with inventory. Finished weapon effects in battle, excluding extra attacks Tommy Rong
 
-1/14/2015: Save now saves progress, added the option of advancing in level or retreating or staying -Rong Tommy
+1/14/2015: Save now saves progress, added the option of advancing in level or retreating or staying Rong Tommy
 
-1/15/2015: Cleaned up shop, bug fixes
+1/15/2015: Cleaned up shop, bug fixes, added a final boss on level 10, after beating game, load will load on level 9, fixed inventory names Rong Tommy
 
 Still need to work on: Levels (What happens in each level), more variety of monsters, shop, more attacks
