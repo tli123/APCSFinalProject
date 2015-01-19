@@ -12,7 +12,7 @@ public class Shop {
     public int[] power;
 
     public Shop() {
-	gitems = {"sp", "mp", "bip", "rp", "yp", "blp", "gp"};
+	gitems = {"small potion", "medium potion", "big potion", "red potion", "yellow potion", "blue potion", "green potion"};
 	priceg = {40, 60, 130, 100, 200, 400, 800}
 	witems = {"copper sword", "bronze sword", "silver sword", "gold sword", "platinum sword", "diamond sword", "copper armor", "bronze armor", "silver armor", "golden armor"};
 	mitems = {"wooden staff", "fire staff", "water staff", "earth staff", "ice staff", "golden staff", "fire robe", "aqua robe", "nature robe", "icy robe"};
