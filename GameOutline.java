@@ -17,7 +17,8 @@ public class GameOutline{
 	    B.ImpleStats(SL.Load());
 	    String[] LevAndMon= SL.Load2();
 	    LevelNumber=Integer.valueOf(LevAndMon[0]);
-	    MonsterNum=Integer.valueOf(LevAndMon[1]);}
+	    MonsterNum=Integer.valueOf(LevAndMon[1]);
+	    B.inventory=SL.InventoryLoad();}
 
 	else{
 	    GetName N=new GetName();
@@ -70,11 +71,12 @@ public class GameOutline{
 
 		if(battleWon){
 		    MonsterNum-=1;
-		    System.out.println("You have found "+MCoins+"coins.");
+		    System.out.println("You have found "+MCoins+" coins.");
 		    B.coins+=MCoins;
 		    B.LevelingUp();
 		    if (SL.LS(2)){
 			SL.Write(B.GetStats(), LevelNumber, MonsterNum);
+			SL.InventoryWrite(B.inventory);
 			System.out.println("You saved the game.");
 		    }
 		}//upper fighting if
@@ -125,8 +127,6 @@ public class GameOutline{
 	}
     	}//while(true)
 	    
-	
-
     }
 
     public int Moving(int Level){

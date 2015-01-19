@@ -10,6 +10,11 @@ public class Battle{
 	    System.out.println();
 	    A.Status();
 	    B.Status();
+	    if (A.WantInventory()){
+		A.InventoryWork();
+		A.Status();
+		B.Status();}
+	    System.out.println("Attack or Strong Attack?");
 	    Scanner sc = new Scanner(System.in);
 	    String Atk = sc.nextLine();
 	    Atk=Atk.toUpperCase();
