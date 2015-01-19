@@ -33,7 +33,7 @@ public class Basechar {
 	this.armorPoints = aP;
     }
 
-    //Calculates the damage done
+    //Attacks
     public String Attack(Basechar other){
 	if (didHit(accuracy)){
 	    other.health = other.health - this.attack;
@@ -92,9 +92,9 @@ public class Basechar {
 	boolean Correct = true;
 	while (Correct){
 	    Scanner sc = new Scanner(System.in);
-	    Choice = sc.next();
+	    Choice = sc.nextLine();
 	    Choice = Choice.toUpperCase();
-	    String[] Check = {"HEALTH", "ATTACK", "ACCURACY", "EVADE", "QUIT"};
+	    String[] Check = {"HEALTH", "ATTACK", "ACCURACY", "EVADE", "QUIT", ""};
 	    if (!Arrays.asList(Check).contains(Choice)) {
 		System.out.println("This is not listed above. Enter something correct ");
 	    }
@@ -108,21 +108,21 @@ public class Basechar {
 	if (Choice.equals("HEALTH")){
 	    health+=5;
 	}
-	else if (Choice.equals("ATTACK")){
-	    attack+=1;
+	else if (Choice.equals("EVADE	")){
+	    evade+=2;
 	}
 	else if (Choice.equals("ACCURACY")){
 	    accuracy+=2;
 	}
 	else{
-	    evade+=2;
+	    attack+=1;
 	}
 	System.out.println();
 	System.out.println("Now your stats are the following:");
 	Stats();
     }
 
-    //Random Number generator that will give a little variation to the damage dealt
+    //Random Number generator that will be used whenever something involves chance
     public boolean Chance(int Num){
 	Random R = new Random();
 	if (R.nextInt(Num) == 0){
@@ -148,6 +148,7 @@ public class Basechar {
 	accuracy+=R.nextInt(Level*3);
 	evade+=R.nextInt(Level*3);
 	weaponStats=R.nextInt(Level*3);
+	coins+=R.nextInt(Level*3);
     }
 
     //Generation of boss stats
@@ -167,6 +168,7 @@ public class Basechar {
 	accuracy+=R.nextInt(Level*3);
 	evade+=R.nextInt(Level*3);
 	weaponStats=R.nextInt(Level*3);
+	coins+=R.nextInt(Level*3);
     }
 
     //Prints name and health of player
@@ -211,17 +213,6 @@ public class Basechar {
 	return Stat;
     }
 
-    /*  Uneeded, an arrayList consolidates by itself
-    public void Consolidate(){
-	for (int i=1; i<inventory.size()-1;i++){
-	    if (inventory.get(i)!=null && inventory.get(i-1)==null){
-		inventory.set(i-1, inventory.get(i));
-		inventory.set(i, null);
-	    }
-	}
-    }
-    */
-
     //Checks if input is a number
     public boolean IsInt(String str){
 	try {
@@ -232,13 +223,16 @@ public class Basechar {
 	    return false;
 	}
     }
-
-    //Allows player to use their inventory
+    //Opens inventory to use
     public void InventoryWork(){
+	while (true){
 	System.out.println("This is your inventory:");
 	for (int i=0; i<inventory.size(); i++){
 	    System.out.println(i+". "+inventory.get(i));
 	}
+	if (inventory.size()==0){
+	    System.out.println("Your inventory is empty!");}
+
 	System.out.println("Type the number corresponding to the item you want to use");
 	System.out.println("Type -1 to go back");
 	
@@ -261,18 +255,35 @@ public class Basechar {
 		}
 	    }
 	}
-	
 	Conversion Con = new Conversion();
 	
 	int LimitHealth = health;
-	health= Con.Converter(inventory.get(choice), health);
+	if (choice!=-1){
+	    health+= Con.Converter(inventory.get(choice), health);
+	    System.out.println("You used "+ inventory.remove(choice));}
+	else{ break;}
 
 	if (health > LimitHealth){
 	    health = LimitHealth;}
-
-	inventory.remove(choice);
-	//Consolidate();
-
+	
+	}//While loop
+    }
+    //Askes whether or not to open Inventory
+    public boolean WantInventory(){
+	System.out.println("Would you like to view your inventory?");
+	String Choice = "";
+	while (true){
+	    Scanner sc = new Scanner(System.in);
+	    Choice = sc.nextLine();
+	    Choice = Choice.toUpperCase();
+	    String[] Check = {"QUIT", "YES", "NO"};
+	    if (!Choice.equals("QUIT")&&!Choice.equals("YES")&&!Choice.equals("NO")&&!Choice.equals("")) {
+		System.out.println("You did not answer the question");}
+	    else {break;}}
+	if (Choice.equals("QUIT")){System.exit(0);}
+	if (Choice.equals("NO")){return false;}
+	if (Choice.equals("YES")){return true;}
+	else{return false;} //I'm lazy
     }
 
     //SPECIAL EFFECTS OF WEAPONS (See shop)

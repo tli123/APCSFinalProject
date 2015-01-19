@@ -76,7 +76,7 @@ public class SaveLoad{
 	}
     }
 
-    public ArrayList<String> ILoad(){
+    public ArrayList<String> InventoryLoad(){
 	File file = new File("inventory.txt");
 	ArrayList<String> Stuff = new ArrayList<String>();
 	try{
@@ -90,7 +90,7 @@ public class SaveLoad{
 	return Stuff;
     }
     
-    public void IWrite(ArrayList<String> Stuff) throws Exception{
+    public void InventoryWrite(ArrayList<String> Stuff) throws Exception{
 	/*deletes everything inside*/
 	PrintWriter writer = new PrintWriter("inventory.txt");
 	writer.print("");
@@ -127,12 +127,12 @@ public class SaveLoad{
 	    Scanner sc = new Scanner(System.in);
 	    Choice = sc.nextLine();
 	    Choice = Choice.toUpperCase();
-	    String[] Check = {"YES", "NO", "QUIT"};
+	    String[] Check = {"YES", "NO", "QUIT", ""};
 	    if (!Arrays.asList(Check).contains(Choice)) {
 		System.out.println("Type yes or no only");}
-	    if (Choice.equals("QUIT")){
+	    else if (Choice.equals("QUIT")){
 		System.exit(0);}
-	    if (Choice.equals("NO")){
+	    else if (Choice.equals("NO")){
 		return false;}
 	    else{return true;}	
 	}
