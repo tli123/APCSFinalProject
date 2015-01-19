@@ -1,6 +1,6 @@
 public class Ogre extends Basechar{
 
-    public Orge(){
-	super(10, 2, 0, 75, 5, 2, "Ogre", "Monster", 10, "", 0);
+    public Ogre(){
+	super(15, 6, 0, 75, 5, 3, "Ogre", "Monster", 20, "", 0);
     }
 }

@@ -4,6 +4,7 @@ import java.io.*;
 public class GameOutline{
 
     public static void main(String args[]) throws Exception{// GAME(){
+	boolean battleWon=false;
 	int LevelNumber = 1;
 	int MonsterNum;
 	// Introduction + Credits
@@ -34,14 +35,43 @@ public class GameOutline{
 	while(LevelNumber<10){
 
 	    while (MonsterNum>0){ //Dungeon not cleared
-		CannonFodder A = new CannonFodder();
-		A.Gen(LevelNumber);
-		
+		System.out.println("There are "+MonsterNum+" monsters left");
 		Battle fight = new Battle();
-		if(fight.battle(B, A)){
+		int MCoins;
+
+		GameOutline GO = new GameOutline();
+		int pick = GO.MonPicker(LevelNumber);
+
+		if (pick==1){
+		    CannonFodder A = new CannonFodder();
+		    A.Gen(LevelNumber);
+		    MCoins=A.coins;
+		    battleWon=fight.battle(B, A);}
+		else if (pick==2){
+		    Imp C = new Imp();
+		    C.Gen(LevelNumber);
+		    MCoins=C.coins;
+		    battleWon=fight.battle(B, C);}
+		else if (pick==3){
+		    Ogre D = new Ogre();
+		    D.Gen(LevelNumber);
+		    MCoins=D.coins;
+		    battleWon=fight.battle(B, D);}
+		else if (pick==4){
+		    Troll E = new Troll();
+		    E.Gen(LevelNumber);
+		    MCoins=E.coins;
+		    battleWon=fight.battle(B, E);}
+		else{
+		    MiniOverlord F = new MiniOverlord();
+		    F.Gen(LevelNumber);
+		    MCoins=F.coins;
+		    battleWon=fight.battle(B, F);}
+
+		if(battleWon){
 		    MonsterNum-=1;
-		    System.out.println("You have found "+A.coins+"coins.");
-		    B.coins+=A.coins;
+		    System.out.println("You have found "+MCoins+"coins.");
+		    B.coins+=MCoins;
 		    B.LevelingUp();
 		    if (SL.LS(2)){
 			SL.Write(B.GetStats(), LevelNumber, MonsterNum);
@@ -124,6 +154,16 @@ public class GameOutline{
 	}
 	else{
 	    return Level;}}
+
+    public int MonPicker(int LevelNumber){
+	Random R = new Random();
+	int Picker = R.nextInt(LevelNumber)+LevelNumber;
+	if (Picker<3){return 1;}
+	else if (Picker<6){return 2;}
+	else if (Picker<10){return 3;}
+	else if (Picker<14){return 4;}
+	else{return 5;}
+    }
 
 /*
     public static void main(String args[]){
