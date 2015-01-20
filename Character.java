@@ -11,7 +11,7 @@ public class Character extends Basechar {
 	    super(12, 4, 0, 75, 4, 1, "Cannon Fodder", "Monster", 15, "", 0);
 	}
 	if (name.equals("Mage")) {
-	    super(80, 12, 4, 90, 10, 1, charname, "Mage", 0, "", 0);
+	    super(80, 12, 4, 90, 10, 1, charname, "Mage", 0, "Basic Robe", 0);
 	    weaponName = "Basic Staff";
 	}
 	if (name.equals("MiniOverlord")) {
@@ -24,7 +24,7 @@ public class Character extends Basechar {
 	    super(50, 10, 5, 300, 25, 10, "Epic Overlord", "Boss", 150, "", 10);
 	}
 	if (name.equals("Rogue")) {
-	    super(75, 9, 5, 90, 15, 1, charname, "Rogue", 0, "", 0);
+	    super(75, 9, 5, 90, 15, 1, charname, "Rogue", 0, "Brittle Armor", 0);
 	    weaponName = "Knife";
 	}
 	if (name.equals("Troll")) {
