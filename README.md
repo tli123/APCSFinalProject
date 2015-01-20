@@ -43,4 +43,6 @@ Period 1
 
 1/19/2015: Cleaned up shop even more, condensed, and fixed up general shop. Will condense further. Cleaned up a few classes, and thinking about merging files - perhaps an if statement with all the monster and character classes. Move Conversion into Basechar, and delete Driver. Tommy
 
-Still need to work on:shop, more attacks
+1/20/2015: Added quick attack, shop is buggy but works, inventory now works right away, enemy has variation in attack Tommy Rong
+
+Still need to work on:shop, title block

@@ -14,11 +14,11 @@ public class Battle{
 		A.InventoryWork();
 		A.Status();
 		B.Status();}
-	    System.out.println("Attack or Strong Attack?");
+	    System.out.println("Attack or Strong Attack or Quick Attack?");
 	    Scanner sc = new Scanner(System.in);
 	    String Atk = sc.nextLine();
 	    Atk=Atk.toUpperCase();
-	    if (!Atk.equals("QUIT")&&!Atk.equals("ATTACK")&&!Atk.equals("STRONG ATTACK")&&!Atk.equals("")){
+	    if (!Atk.equals("QUIT")&&!Atk.equals("ATTACK")&&!Atk.equals("STRONG ATTACK")&&!Atk.equals("")&&!Atk.equals("QUICK ATTACK")){
 		System.out.println("You typed something wrong, your move has been invalided");}
 	    else {
 	    if (Atk.equals("QUIT")){
@@ -27,6 +27,8 @@ public class Battle{
 	    else if (Atk.equals("STRONG ATTACK")){
 		System.out.println(A.StrongAttack(B));
 	    }
+	    else if (Atk.equals("QUICK ATTACL")){
+		System.out.println(A.QuickAttack(B));}
 	    else{
 		 System.out.println(A.Attack(B));}
 	    }
@@ -80,7 +82,15 @@ public class Battle{
 		A.health = HRestore;
 		return true;
 	    }
-	    System.out.println(B.Attack(A));
+
+	    Random R = new Random();
+	    int r=R.nextInt(3);
+	    if (r==0){
+		System.out.println(B.Attack(A));}
+	    else if (r==1){
+		System.out.println(B.StrongAttack(A));}
+	    else{
+		System.out.println(B.QuickAttack(A));}
 	    if (!NotDead(A)){
 		System.out.println("You lose!");
 		A.health=HRestore;

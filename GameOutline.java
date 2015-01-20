@@ -24,7 +24,8 @@ public class GameOutline{
 	    GetName N=new GetName();
 	    String name=N.Name();
 	    B = new Warrior(name);
-	    MonsterNum=LevelNumber*5;}
+	    B.inventory=SL.InitialInventoryLoad();
+	    MonsterNum=LevelNumber*2;}
 
 	System.out.println();
 
@@ -44,7 +45,7 @@ public class GameOutline{
 		int pick = GO.MonPicker(LevelNumber);
 
 		if (pick==1){
-		    CannonFodder A = new CannonFodder();
+		    CannonFodder A= new CannonFodder();
 		    A.Gen(LevelNumber);
 		    MCoins=A.coins;
 		    battleWon=fight.battle(B, A);}
@@ -82,7 +83,7 @@ public class GameOutline{
 		}//upper fighting if
 		else {
 		    LevelNumber -= 1;
-		    MonsterNum=LevelNumber*5;
+		    MonsterNum=LevelNumber*2;
 		}
 	    }//MonsterNum>0
 
@@ -95,13 +96,16 @@ public class GameOutline{
 		B.coins+=A.coins;
 	    System.out.println("You defeated the boss");
 
+	    B.Shop();
+	    B.Store();
+
 	    GameOutline M = new GameOutline();
 	    LevelNumber = M.Moving(LevelNumber);
-	    MonsterNum=LevelNumber*5;
+	    MonsterNum=LevelNumber*2;
 	    }else{//fight lost
 		LevelNumber-=1;}
 
-	    MonsterNum=LevelNumber*5;
+	    MonsterNum=LevelNumber*2;
 	    System.out.println("You are now on level "+LevelNumber);
 	    
 	    

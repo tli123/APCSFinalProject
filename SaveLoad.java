@@ -89,6 +89,19 @@ public class SaveLoad{
 	    System.out.println("File not found");}
 	return Stuff;
     }
+    public ArrayList<String> InitialInventoryLoad(){
+	File file = new File("inventoryEmpty.txt");
+	ArrayList<String> Stuff = new ArrayList<String>();
+	try{
+	    Scanner scanner = new Scanner(file);
+	    while (scanner.hasNextLine()){
+		Stuff.add(scanner.nextLine());
+	    }
+	    scanner.close();
+	} catch (Exception e) {
+	    System.out.println("File not found");}
+	return Stuff;
+    }
     
     public void InventoryWrite(ArrayList<String> Stuff) throws Exception{
 	/*deletes everything inside*/
