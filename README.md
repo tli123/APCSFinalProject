@@ -41,6 +41,6 @@ Period 1
 
 1/19/2015: Added more monsters, different monsters now appear on the same level, player can access inventory during battle, inventory works, made a default answer for everything so that I can just press enter and not need to type anything else :) -Rong
 
-1/19/2015: Cleaned up shop even more, condensed, and fixed up general shop. Will condense further. Tommy
+1/19/2015: Cleaned up shop even more, condensed, and fixed up general shop. Will condense further. Cleaned up a few classes, and thinking about merging files - perhaps an if statement with all the monster and character classes. Move Conversion into Basechar, and delete Driver. Tommy
 
 Still need to work on:shop, more attacks
