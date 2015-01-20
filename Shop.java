@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-public class Shop {
+public class Shop{
 
     public String[] gitems;
     public String[] witems;
@@ -13,7 +13,7 @@ public class Shop {
 
     public Shop() {
 	gitems = new String[]{"small potion", "medium potion", "big potion", "red potion", "yellow potion", "blue potion", "green potion"};
-	priceg = new int[] {40, 60, 130, 100, 200, 400, 800}
+	priceg = new int[] {40, 60, 130, 100, 200, 400, 800};
 	witems = new String[]{"copper sword", "bronze sword", "silver sword", "gold sword", "platinum sword", "diamond sword", "copper armor", "bronze armor", "silver armor", "golden armor"};
 	mitems = new String[]{"wooden staff", "fire staff", "water staff", "earth staff", "ice staff", "golden staff", "fire robe", "aqua robe", "nature robe", "icy robe"};
 	ritems = new String[]{"dagger","double knives", "machete", "long knife", "double long knife", "triple long knives", "leather armor", "black armor", "koskin armor", "ninja armor"};
@@ -22,19 +22,7 @@ public class Shop {
     }
 
     public void check(String name, String type){
-	int pos;
-	if (witems.indexOf(name) >= 0) {
-	    pos = witems.indexOf(name);
-	}
-	if (ritems.indexOf(name) >= 0) {
-	    pos = ritems.indexOf(name);
-	}
-	if (mitems.indexOf(name) >= 0) {
-	    pos = mitems.indexOf(name);
-	}
-	if (gitems.indexOf(name) >= 0) {
-	    pos = gitems.indexOf(name);
-	}
+        int pos = Search(name);
 	if (type.equals("weapon")) {
 	    this.weaponName = name;
 	    this.coins = coins - price[pos];
@@ -46,7 +34,39 @@ public class Shop {
 	    this.armorStats = power[pos];
 	}	
 	if (type.equals("potion")) {
-	    this.coinds = coins - priceg[pos];
+	    this.coins = coins - priceg[pos];
+	    }
+    }
+
+    public int Search(String Name){
+	if (Arrays.asList(witems).contains(Name)){
+	    for (int i=0;i<witems.length; i++){
+		if (witems[i].equals(Name)) {
+		    return i;
+		}
+	    }
+	}
+	if (Arrays.asList(mitems).contains(Name)){
+	    for (int i=0;i<mitems.length; i++){
+		if (mitems[i].equals(Name)) {
+		    return i;
+		}
+	    }
+	}
+	if (Arrays.asList(ritems).contains(Name)){
+	    for (int i=0;i<ritems.length; i++){
+		if (ritems[i].equals(Name)) {
+		    return i;
+		}
+	    }	
+	}
+
+	if (Arrays.asList(gitems).contains(Name)){
+	    for (int i=0;i<gitems.length; i++){
+		if (gitems[i].equals(Name)) {
+		    return i;
+		}
+	    }	
 	}
     }
 
@@ -59,6 +79,7 @@ public class Shop {
 
 	while (true) {
 	    Scanner sc = new Scanner(System.in);
+	    String Choice = sc.nextLine();
 	    Choice = Choice.toLowerCase();
 	    if (Choice.equals("one") || Choice.equals("two")) {
 		if (Choice.equals("one")) {
@@ -76,9 +97,10 @@ public class Shop {
 			System.out.println("Golden Armor (5000 coins)\n");
 			System.out.println("What would you like to purchase? ");
 			while (true) { //Not done with store
+			    Scanner sca = new Scanner(System.in);
+			    String choice = sca.nextLine();
+			    choice = choice.toLowerCase();
 			    while (true) {//Right choice
-				Scanner sca = new Scanner(System.in);
-				choice = choice.toLowerCase();
 				if (!Arrays.asList(witems).contains(choice) || choice.equals("back")) {
 				    System.out.println("This is not listed above. Enter something correct: ");
 				}
@@ -89,11 +111,11 @@ public class Shop {
 			    if (choice.equals("back")) {
 				break;
 			}
-			    if (coins < price.get(witems.indexOf(Choice))) {
+			    if (coins < price[Search(choice)]) {
 				System.out.println("You do not have enough coins to purchase this item.");
 			    }
 			    else {
-				if (witems.indexOf(choice) < 6) {
+				if (Search(choice) < 6) {
 				    check(choice, "weapon");
 				}
 				else {
@@ -117,9 +139,10 @@ public class Shop {
 			System.out.println("Icy Robe (5000 coins)\n");
 			System.out.println("What would you like to purchase? ");
 			while (true) {
+			    Scanner sca = new Scanner(System.in);
+			    String choice = sca.nextLine();
+			    choice = choice.toLowerCase();
 			    while (true) {
-				Scanner sca = new Scanner(System.in);
-				choice = choice.toLowerCase();
 				if (!Arrays.asList(mitems).contains(choice) || choice.equals("back")) {
 				    System.out.println("This is not listed above. Enter something correct: ");
 				}
@@ -130,11 +153,11 @@ public class Shop {
 			    if (choice.equals("back")) {
 				break;
 			    }
-			    if (coins < price.get(mitems.indexOf(Choice))) {
+			    if (coins < price[Search(choice)]) {
 				System.out.println("You do not have enough coins to purchase this item.");
 			    }
 			    else {
-				if (mitems.indexOf(choice) < 6) {
+				if (Search(choice) < 6) {
 				    check(choice, "weapon");
 				}
 				else {
@@ -158,9 +181,10 @@ public class Shop {
 			System.out.println("Ninja Armor (5000 coins)\n");
 			System.out.println("What would you like to purchase? ");
 			while (true) {
+			    Scanner sca = new Scanner(System.in);
+			    String choice = sca.nextLine();
+			    choice = choice.toLowerCase();
 			    while (true) {
-				Scanner sca = new Scanner(System.in);
-				choice = choice.toLowerCase();
 				if (!Arrays.asList(ritems).contains(choice) || choice.equals("back")) {
 				    System.out.println("This is not listed above. Enter something correct: ");
 				}
@@ -171,11 +195,11 @@ public class Shop {
 			    if (choice.equals("back")) {
 				break;
 			    }
-			    if (coins < price.get(ritems.indexOf(Choice))) {
+			    if (coins < price[Search(choice)]) {
 			    System.out.println("You do not have enough coins to purchase this item.");
 			    }
 			    else {
-				if (ritems.indexOf(choice) < 6) {
+				if (Search(choice) < 6) {
 				    check(choice, "weapon");
 				}
 				else {
@@ -196,9 +220,10 @@ public class Shop {
 		    System.out.println("Green Potion. Restores all of your health. (800 coins)\n");
 		    System.out.println("What would you like to purchase? ");
 		    while (true) {
+			Scanner sca = new Scanner(System.in);
+			String choice = sca.nextLine();
+			choice = choice.toLowerCase();
 			while (true) {
-			    Scanner sca = new Scanner(System.in);
-			    choice = choice.toLowerCase();
 			    if (!Arrays.asList(gitems).contains(choice) || choice.equals("back")) {
 				System.out.println("This is not listed above. Enter something correct: ");
 			    }
@@ -209,7 +234,7 @@ public class Shop {
 			if (choice.equals("back")) {
 			    break;
 			}
-			if (coins < price.get(gitems.indexOf(choice))) {
+			if (coins < price[Search(choice)]) {
 			    System.out.println("You do not have enough coins to purchase this item.");
 			}
 			else {
