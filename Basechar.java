@@ -25,7 +25,7 @@ public class Basechar {
 	this.defense = d;
 	this.accuracy = acc;
 	this.evade = e;
-	this.weaponStats=WS;
+	this.weaponStats = WS;
 	this.name = n;
        	this.type = t;
 	this.coins = c;
@@ -39,7 +39,7 @@ public class Basechar {
 	    other.health = other.health - this.attack;
 	    return (name+ " attacked " +other.name + " and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
 	}
-	else{
+	else {
 	    return (name+ " attacked and missed");
 	}
     }
