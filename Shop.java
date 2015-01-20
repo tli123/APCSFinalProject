@@ -12,13 +12,13 @@ public class Shop {
     public int[] power;
 
     public Shop() {
-	gitems = {"small potion", "medium potion", "big potion", "red potion", "yellow potion", "blue potion", "green potion"};
-	priceg = {40, 60, 130, 100, 200, 400, 800}
-	witems = {"copper sword", "bronze sword", "silver sword", "gold sword", "platinum sword", "diamond sword", "copper armor", "bronze armor", "silver armor", "golden armor"};
-	mitems = {"wooden staff", "fire staff", "water staff", "earth staff", "ice staff", "golden staff", "fire robe", "aqua robe", "nature robe", "icy robe"};
-	ritems = {"dagger","double knives", "machete", "long knife", "double long knife", "triple long knives", "leather armor", "black armor", "koskin armor", "ninja armor"};
-	price = {600, 900, 1400, 2500, 5000, 10000, 1500, 1800, 2200, 5000};
-	power = {10, 20, 30, 40, 50, 60, 15, 30, 45, 60};
+	gitems = new String[]{"small potion", "medium potion", "big potion", "red potion", "yellow potion", "blue potion", "green potion"};
+	priceg = new int[] {40, 60, 130, 100, 200, 400, 800}
+	witems = new String[]{"copper sword", "bronze sword", "silver sword", "gold sword", "platinum sword", "diamond sword", "copper armor", "bronze armor", "silver armor", "golden armor"};
+	mitems = new String[]{"wooden staff", "fire staff", "water staff", "earth staff", "ice staff", "golden staff", "fire robe", "aqua robe", "nature robe", "icy robe"};
+	ritems = new String[]{"dagger","double knives", "machete", "long knife", "double long knife", "triple long knives", "leather armor", "black armor", "koskin armor", "ninja armor"};
+	price = new int[]{600, 900, 1400, 2500, 5000, 10000, 1500, 1800, 2200, 5000};
+	power = new int[]{10, 20, 30, 40, 50, 60, 15, 30, 45, 60};
     }
 
     public void check(String name, String type){
