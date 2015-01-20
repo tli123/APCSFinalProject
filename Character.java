@@ -35,4 +35,7 @@ public class Character extends Basechar {
 	    weaponName = "Basic Sword";
 	}
     }
+    public Character(String Name, String Choice, String Type){
+	
+    }
 }
