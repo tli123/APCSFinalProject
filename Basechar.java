@@ -52,6 +52,16 @@ public class Basechar {
 	    return (name+ " attacked and missed");
 	}
     }
+
+    public String QuickAttack(Basechar other){
+	if (didHit(accuracy) + (accuracy/10))){
+	    other.health = other.health - ((this.attack * 4)/5) ;
+	    return (name+ " attacked " +other.name + " quickly dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
+	}
+	else{
+	    return (name+ " attacked and missed");
+	}
+    }
     
 
     //Uses accuracy and dexterity to determine if the attack hit
