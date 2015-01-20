@@ -54,7 +54,7 @@ public class Basechar {
     }
 
     public String QuickAttack(Basechar other){
-	if (didHit(accuracy) + (accuracy/10))){
+	if (didHit(accuracy+accuracy/10)){
 	    other.health = other.health - ((this.attack * 4)/5) ;
 	    return (name+ " attacked " +other.name + " quickly dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
 	}
@@ -265,11 +265,12 @@ public class Basechar {
 		}
 	    }
 	}
-	Conversion Con = new Conversion();
+	//nversion Con = new Conversion();
+	int Con=Conversion(inventory.get(choice));
 	
 	int LimitHealth = health;
 	if (choice!=-1){
-	    health+= Con.Converter(inventory.get(choice), health);
+	    health+= Con;
 	    System.out.println("You used "+ inventory.remove(choice));}
 	else{ break;}
 
@@ -277,6 +278,31 @@ public class Basechar {
 	    health = LimitHealth;}
 	
 	}//While loop
+    }
+
+    public int Conversion(String str) {
+	if (str.equals("sp")){	
+	    return 50;
+	}
+	if (str.equals("mp")){
+	    return 80;
+	}
+	if (str.equals("bip")){
+	    return 150;
+	}
+	if (str.equals("rp")){
+	    return health/8;
+	}
+	if (str.equals("yp")){
+	    return health/4;
+	}
+	if (str.equals("blp")){
+	    return health/2;
+	}
+	if (str.equals("gp")){
+	    return health;
+	}
+	return 10;
     }
     //Askes whether or not to open Inventory
     public boolean WantInventory(){
