@@ -22,11 +22,14 @@ public class Battle{
 		System.out.println("You typed something wrong, your move has been invalided");}
 	    else {
 	    if (Atk.equals("QUIT")){
-		System.exit(0);}
+		System.exit(0);
+	    }
 	    else if (Atk.equals("STRONG ATTACK")){
-		System.out.println(A.StrongAttack(B));}
+		System.out.println(A.StrongAttack(B));
+	    }
 	    else{
-		 System.out.println(A.Attack(B));}}
+		 System.out.println(A.Attack(B));}
+	    }
 
 	    if (A.weaponName.equals("bronze sword")||A.weaponName.equals("wooden staff")){
 		A.AttackHeal(5, A.health);
