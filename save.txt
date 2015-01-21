@@ -1,7 +1,7 @@
 5
 0
-115
-61
+120
+71
 7
 98
 16
@@ -11,4 +11,4 @@ Basic Sword
 Basic Armor
 tom
 Warrior
-4846
+5906

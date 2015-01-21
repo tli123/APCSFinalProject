@@ -185,7 +185,7 @@ public class Basechar {
     public void Status(){
 	System.out.println(name);
 	System.out.println("Health: "+health);
-}
+    }
 
     //Takes stats in the save file and updates them to Basechar
     public void ImpleStats(String[] Stats){
@@ -236,46 +236,46 @@ public class Basechar {
     //Opens inventory to use
     public void InventoryWork(){
 	while (true){
-	System.out.println("This is your inventory:");
-	System.out.println(inventory.size());
-	for (int i=0; i<inventory.size(); i++){
-	    System.out.println(i+". "+inventory.get(i));
-	}
-	if (inventory.size()==0){
-	    System.out.println("Your inventory is empty!");}
-
-	System.out.println("Type the number corresponding to the item you want to use");
-	System.out.println("Type -1 to go back");
-	
-	int choice = 0;
-	String Choice = "";
-	boolean Correct = true;
-	while (Correct){
-	    Scanner sc = new Scanner(System.in);
-	    Choice = sc.next();
-	    if (!IsInt(Choice)) {
-		System.out.println("This is not a corresponding number.");
+	    System.out.println("This is your inventory:");
+	    System.out.println(inventory.size());
+	    for (int i=0; i<inventory.size(); i++){
+		System.out.println(i+". "+inventory.get(i));
 	    }
-	    else{
-		choice = Integer.valueOf(Choice);
-		if (choice <-1 || choice >= inventory.size()){
+	    if (inventory.size()==0){
+		System.out.println("Your inventory is empty!");}
+
+	    System.out.println("Type the number corresponding to the item you want to use");
+	    System.out.println("Type -1 to go back");
+	
+	    int choice = 0;
+	    String Choice = "";
+	    boolean Correct = true;
+	    while (Correct){
+		Scanner sc = new Scanner(System.in);
+		Choice = sc.next();
+		if (!IsInt(Choice)) {
 		    System.out.println("This is not a corresponding number.");
 		}
-	   	else{ 
-		    Correct=false;
+		else{
+		    choice = Integer.valueOf(Choice);
+		    if (choice <-1 || choice >= inventory.size()){
+			System.out.println("This is not a corresponding number.");
+		    }
+		    else{ 
+			Correct=false;
+		    }
 		}
 	    }
-	}
 	
-	int LimitHealth = health;
-	if (choice!=-1){
-	int Con=Conversion(inventory.get(choice));
-	    health+= Con;
-	    System.out.println("You used "+ inventory.remove(choice));}
-	else{ break;}
+	    int LimitHealth = health;
+	    if (choice!=-1){
+		int Con=Conversion(inventory.get(choice));
+		health+= Con;
+		System.out.println("You used "+ inventory.remove(choice));}
+	    else{ break;}
 
-	if (health > LimitHealth){
-	    health = LimitHealth;}
+	    if (health > LimitHealth){
+		health = LimitHealth;}
 	
 	}//While loop
     }
@@ -377,8 +377,8 @@ public class Basechar {
 	    health = 0;
 	}
     }
-//////////////////////////////////////////////////////////////////////////////
-//All down is shop
+    //////////////////////////////////////////////////////////////////////////////
+    //All down is shop
     public String[] gitems;
     public String[] witems;
     public String[] mitems;
@@ -389,21 +389,23 @@ public class Basechar {
 
 
 
-    public void check(String name, String type){
+    public void check(String name, String typeitem){
         int pos = Search(name);
-	if (type.equals("weapon")) {
+	if (typeitem.equals("weapon")) {
 	    weaponName = name;
 	    coins = coins - price[pos];
 	    weaponStats = power[pos];
 	}
-	if (type.equals("armor")) {
+	if (typeitem.equals("armor")) {
 	    armorName = name;
 	    coins = coins - price[pos];
 	    armorPoints = power[pos];
 	}	
-	if (type.equals("potion")) {
+	if (typeitem.equals("potion")) {
 	    coins = coins - priceg[pos];
-	    }
+	}
+	inventory.add(name);
+	System.out.println("You have successfully purchased " + name + "!");
     }
 
     public int Search(String Name){
@@ -449,12 +451,12 @@ public class Basechar {
 
     public void Store() {
 	while (true) {
-	System.out.println("Welcome to the shop!");
-	System.out.println("Here, you can spend all the coins you won from defeating monsters.");
-	System.out.println("Which option do you want:");
-	System.out.println("Option One: Weapons and Armor");
-	System.out.println("Option Two: Potions");
-	System.out.println("Option Three: Back");
+	    System.out.println("Welcome to the shop!");
+	    System.out.println("Here, you can spend all the coins you won from defeating monsters.");
+	    System.out.println("Which option do you want:");
+	    System.out.println("Option One: Weapons and Armor");
+	    System.out.println("Option Two: Potions");
+	    System.out.println("Option Three: Back");
 
 	    Scanner sc = new Scanner(System.in);
 	    String Choice = sc.nextLine();
@@ -475,18 +477,22 @@ public class Basechar {
 			System.out.println("Golden Armor (5000 coins)\n");
 			System.out.println("What would you like to purchase? ");
 			while (true) { //Not done with store
-			    Scanner sca = new Scanner(System.in);
-			    String choice = sca.nextLine();
-			    choice = choice.toLowerCase();
-				if (!Arrays.asList(mitems).contains(choice) && !choice.equals("back")) {
+			    String choice;
+			    while (true) {
+				Scanner sca = new Scanner(System.in);
+				choice = sca.nextLine();
+				choice = choice.toLowerCase();
+				if (!Arrays.asList(witems).contains(choice) && !choice.equals("back")) {
 				    System.out.println("This is not listed above. Enter something correct: ");
 				}
 				else {
 				    break;
 				}
+			    }
 			    if (choice.equals("back")) {
 				break;
 			    }
+			    
 			    if (coins < price[Search(choice)]) {
 				System.out.println("You do not have enough coins to purchase this item.");
 			    }
@@ -515,15 +521,18 @@ public class Basechar {
 			System.out.println("Icy Robe (5000 coins)\n");
 			System.out.println("What would you like to purchase? ");
 			while (true) {
-			    Scanner sca = new Scanner(System.in);
-			    String choice = sca.nextLine();
-			    choice = choice.toLowerCase();
+			    String choice;
+			    while (true) {
+				Scanner sca = new Scanner(System.in);
+				choice = sca.nextLine();
+				choice = choice.toLowerCase();
 				if (!Arrays.asList(mitems).contains(choice) && !choice.equals("back")) {
 				    System.out.println("This is not listed above. Enter something correct: ");
 				}
 				else {
 				    break;
 				}
+			    }
 			    if (choice.equals("back")) {
 				break;
 			    }
@@ -592,15 +601,19 @@ public class Basechar {
 		    System.out.println("Green Potion. Restores all of your health. (800 coins)\n");
 		    System.out.println("What would you like to purchase? ");
 		    while (true) {
-			Scanner sca = new Scanner(System.in);
-			String choice = sca.nextLine();
-			choice = choice.toLowerCase();
+			
+			String choice;			
+			while (true) {
+			    Scanner sca = new Scanner(System.in);
+			    choice = sca.nextLine();
+			    choice = choice.toLowerCase();
 			    if (!Arrays.asList(gitems).contains(choice) && !choice.equals("back")) {
 				System.out.println("This is not listed above. Enter something correct: ");
 			    }
 			    else {
 				break;
 			    }
+			}
 			if (choice.equals("back")) {
 			    break;
 			}
