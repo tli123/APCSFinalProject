@@ -519,8 +519,8 @@ public class Basechar {
 			System.out.println("Aqua Robe (1800 coins)");
 			System.out.println("Nature Robe (2200 coins)");
 			System.out.println("Icy Robe (5000 coins)\n");
-			System.out.println("What would you like to purchase? ");
-			while (true) {
+			System.out.println("What would you like to purchase? ");			
+			while (true) { //Not done with store
 			    String choice;
 			    while (true) {
 				Scanner sca = new Scanner(System.in);
@@ -536,6 +536,7 @@ public class Basechar {
 			    if (choice.equals("back")) {
 				break;
 			    }
+			    
 			    if (coins < price[Search(choice)]) {
 				System.out.println("You do not have enough coins to purchase this item.");
 			    }
@@ -546,7 +547,7 @@ public class Basechar {
 				else {
 				    check(choice, "armor");
 				}
-			    }
+			    }				
 			}
 		    }
 
@@ -563,21 +564,25 @@ public class Basechar {
 			System.out.println("Koskin Armor (2500 coins");
 			System.out.println("Ninja Armor (5000 coins)\n");
 			System.out.println("What would you like to purchase? ");
-			while (true) {
-			    Scanner sca = new Scanner(System.in);
-			    String choice = sca.nextLine();
-			    choice = choice.toLowerCase();
+			while (true) { //Not done with store
+			    String choice;
+			    while (true) {
+				Scanner sca = new Scanner(System.in);
+				choice = sca.nextLine();
+				choice = choice.toLowerCase();
 				if (!Arrays.asList(ritems).contains(choice) && !choice.equals("back")) {
 				    System.out.println("This is not listed above. Enter something correct: ");
 				}
 				else {
 				    break;
 				}
+			    }
 			    if (choice.equals("back")) {
 				break;
 			    }
+			    
 			    if (coins < price[Search(choice)]) {
-			    System.out.println("You do not have enough coins to purchase this item.");
+				System.out.println("You do not have enough coins to purchase this item.");
 			    }
 			    else {
 				if (Search(choice) < 6) {
@@ -586,11 +591,12 @@ public class Basechar {
 				else {
 				    check(choice, "armor");
 				}
-			    }
+			    }				
 			}
 		    }
 		}
-		if (Choice.equals("two")) {
+
+		else if (Choice.equals("two")) {
 		    System.out.println("General Shop:");
 		    System.out.println("Small Potion: Restores 50 health. (40 coins)");
 		    System.out.println("Medium Potion: Restores 80 health. (60 coins)");

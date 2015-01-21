@@ -1,9 +1,9 @@
 public class Character extends Basechar {
 
-    public Character(String name) {
+    public Character(String Name) {
 	super(10, 2, 0, 75, 5, 2, "Epic Boss 2k14", "Boss", 30, "", 0);
-	System.out.println(name);
-	if (name.equals("CannonFodder")) {
+	System.out.println(Name);
+	if (Name.equals("CannonFodder")) {
 	    health=10;
 	    attack = 2;
 	    evade = 5;
@@ -11,7 +11,7 @@ public class Character extends Basechar {
 	    type = "Monster";
 	    coins = 10;
 	}
-	else if (name.equals("Imp")) {
+	else if (Name.equals("Imp")) {
 	    health=12;
 	    attack = 4;
 	    evade = 5;
@@ -19,7 +19,7 @@ public class Character extends Basechar {
 	    type = "Monster";
 	    coins = 15;
 	}
-	else if (name.equals("MiniOverlord")) {
+	else if (Name.equals("MiniOverlord")) {
 	    health=25;
 	    attack = 10;
 	    evade = 15;
@@ -27,15 +27,15 @@ public class Character extends Basechar {
 	    type = "Monster";
 	    coins = 30;
 	}
-	else if (name.equals("Ogre")) {
+	else if (Name.equals("Ogre")) {
 	    health=15;
 	    attack = 6;
 	    evade = 5;
-	    name = "Ogrer";
+	    name = "Ogre";
 	    type = "Monster";
 	    coins = 20;
 	}
-	if (name.equals("Overlord")) {
+	if (Name.equals("Overlord")) {
 	    health=50;
 	    attack = 10;
 	    accuracy = 100;
@@ -46,7 +46,7 @@ public class Character extends Basechar {
 	    coins = 150;
 	}
 
-	if (name.equals("Troll")) {
+	if (Name.equals("Troll")) {
 	    health=20;
 	    attack = 8;
 	    evade = 5;
@@ -56,9 +56,9 @@ public class Character extends Basechar {
 	}
 
     }
-    public Character(String name, String charname) {
+    public Character(int Name, String charname) {
 	super(0, 0, 0, 0, 0, 0, "", "", 0, "", 0);
-	if (name.equals("Warrior")) {
+	if (Name==1) {
 	    armorPoints = 0;
 	    weaponStats = 0;
 	    health=50;
@@ -72,7 +72,7 @@ public class Character extends Basechar {
 	    armorName="Basic Armor";
 	    weaponName = "Basic Sword";
 	}
-	if (name.equals("Rogue")) {
+	if (Name==3) {
 	    health= 35;
 	    attack = 9;
 	    defense = 5;
@@ -86,7 +86,7 @@ public class Character extends Basechar {
 	    weaponStats = 0;
 	    weaponName = "Knife";
 	}
-	if (name.equals("Mage")) {
+	if (Name==2) {
 	    health=40;
 	    attack = 12;
 	    defense = 4;

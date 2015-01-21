@@ -19,6 +19,32 @@ public class GetName{
 	}
 	return Choice;
     }
+    //Allows player to pick class
+    public int ClassPicker(){
+	System.out.println("Please enter the class you want to be: Warrior, Mage, or Rogue");
+	String Choice = "";
+	while (true){
+	    Scanner sc = new Scanner(System.in);
+	    Choice = sc.nextLine();
+	    Choice = Choice.toUpperCase();
+	    String[] Check = {"ROGUE", "MAGE", "WARRIOR", "", "QUIT"};
+	    if (!Arrays.asList(Check).contains(Choice)) {
+		System.out.println("This is not listed");}
+	    else {break;}
+	}
+	if (Choice.equals("QUIT")){
+	    System.exit(0);
+	}
+	if (Choice.equals("ROGUE")){
+	    return 3;
+	}
+	else if (Choice.equals("MAGE")){
+	    return 2;
+	}
+	else{
+	    return 1;
+	}
+    }
 
 
 

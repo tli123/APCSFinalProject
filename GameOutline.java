@@ -11,7 +11,7 @@ public class GameOutline{
 
 	//Loads + Saves files
 	SaveLoad SL = new SaveLoad();
-	Warrior B = new Warrior("Rong");
+	Character B = new Character(1, "Rong");
 
 	if (SL.LS(1)){
 	    B.ImpleStats(SL.Load());
@@ -22,8 +22,9 @@ public class GameOutline{
 
 	else{
 	    GetName N=new GetName();
-	    String name=N.Name();
-	    B = new Warrior(name);
+	    //String name=N.Name();
+	    //int classNum = N.ClassPicker();
+	    B = new Character(N.ClassPicker(), N.Name());
 	    B.inventory=SL.InitialInventoryLoad();
 	    MonsterNum=LevelNumber*2;}
 
@@ -45,27 +46,27 @@ public class GameOutline{
 		int pick = GO.MonPicker(LevelNumber);
 
 		if (pick==1){
-		    CannonFodder A= new CannonFodder();
+		    Character A= new Character("CannonFodder");
 		    A.Gen(LevelNumber);
 		    MCoins=A.coins;
 		    battleWon=fight.battle(B, A);}
 		else if (pick==2){
-		    Imp C = new Imp();
+		    Character C = new Character("Imp");
 		    C.Gen(LevelNumber);
 		    MCoins=C.coins;
 		    battleWon=fight.battle(B, C);}
 		else if (pick==3){
-		    Ogre D = new Ogre();
+		    Character D = new Character("Ogre");
 		    D.Gen(LevelNumber);
 		    MCoins=D.coins;
 		    battleWon=fight.battle(B, D);}
 		else if (pick==4){
-		    Troll E = new Troll();
+		    Character E = new Character("Troll");
 		    E.Gen(LevelNumber);
 		    MCoins=E.coins;
 		    battleWon=fight.battle(B, E);}
 		else{
-		    MiniOverlord F = new MiniOverlord();
+		    Character F = new Character("MiniOverlord");
 		    F.Gen(LevelNumber);
 		    MCoins=F.coins;
 		    battleWon=fight.battle(B, F);}
@@ -140,9 +141,9 @@ public class GameOutline{
 	String Choice = "";
 	while (true){
 	    Scanner sc = new Scanner(System.in);
-	    Choice = sc.next();
+	    Choice = sc.nextLine();
 	    Choice = Choice.toUpperCase();
-	    String[] Check = {"QUIT", "ADVANCE", "RETREAT", "STAY"};
+	    String[] Check = {"QUIT", "ADVANCE", "RETREAT", "STAY", ""};
 	    if (!Arrays.asList(Check).contains(Choice)) {
 		System.out.println("This is not advance, retreat, nor stay");}
 	    else {break;}
@@ -150,14 +151,15 @@ public class GameOutline{
 	if (Choice.equals("QUIT")){
 	    System.exit(0);
 	}
-	if (Choice.equals("ADVANCE")){
-	    return Level+=1;
-	}
 	else if (Choice.equals("RETREAT")){
 	    return Level-=1;
 	}
-	else{
-	    return Level;}}
+	else if (Choice.equals("STAY")){
+	    return Level;}
+	else {
+	    return Level+=1;}
+	return 1;
+    }
 
     public int MonPicker(int LevelNumber){
 	Random R = new Random();
