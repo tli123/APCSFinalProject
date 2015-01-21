@@ -1,6 +1,8 @@
-Dungeons & a Hero
 APCSFinalProject
 ================
+
+Dungeons and a Hero
+------------------
 
 Tommy Li, Rong Yu
 Period 1
@@ -43,6 +45,6 @@ Period 1
 
 1/19/2015: Cleaned up shop even more, condensed, and fixed up general shop. Will condense further. Cleaned up a few classes, and thinking about merging files - perhaps an if statement with all the monster and character classes. Move Conversion into Basechar, and delete Driver. Tommy
 
-1/20/2015: Added quick attack, shop is buggy but works, inventory now works right away, enemy has variation in attack Tommy Rong
+1/20/2015: Added quick attack, shop is buggy but works, inventory now works right away, enemy has variation in attack. Merged shop and gameoutline in order to make shop less buggy. Also deleted Driver. Tommy Rong
 
 Still need to work on:shop, title block

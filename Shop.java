@@ -35,7 +35,7 @@ public class Shop{
 	}	
 	if (type.equals("potion")) {
 	    this.coins = coins - priceg[pos];
-	    }
+	}
     }
 
     public int Search(String Name){
@@ -60,7 +60,7 @@ public class Shop{
 		}
 	    }	
 	}
-
+	
 	if (Arrays.asList(gitems).contains(Name)){
 	    for (int i=0;i<gitems.length; i++){
 		if (gitems[i].equals(Name)) {
@@ -251,6 +251,6 @@ public class Shop{
 
     public static void main (String[] args) {
 	Shop s = new Shop();
-	s.Store();
+        
     }
 }
