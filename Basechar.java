@@ -35,12 +35,13 @@ public class Basechar {
 
     //Attack - Standard
     public String Attack(Basechar other){
-	if (other.defense>this.attack){
+	if (other.defense+other.armorPoints>this.attack){
 	    return (other.name+"'s defense was too great,"+this.name +" dealt no damage!");
 	}
 	else if (didHit(accuracy)){
-	    other.health = other.health - this.attack+ other.defense;
-	    return (name+ " attacked " +other.name + " and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left!");
+	    int ATTK = other.health - this.attack+ other.defense+other.armorPoints;
+	    other.health = other.health - ATTK;
+	    return (name+ " attacked " +other.name + " and dealt " +ATTK+ " damage, " + other.name + " now has " + other.health + " left!");
 	}
 	else {
 	    return (name+ " attacked and missed!");
@@ -49,11 +50,12 @@ public class Basechar {
 
     //Strong Attack - Half accuracy, higher power
     public String StrongAttack(Basechar other){
-	if (other.defense>this.attack+this.attack){
+	if (other.defense+other.armorPoints>this.attack+this.attack){
 	    return(other.name+"'s defense was too great,"+this.name +" dealt no damage!");}
 	else if (didHit(accuracy/2)){
-	    other.health = other.health - this.attack -this.attack -this.attack + other.defense;
-	    return (name+ " attacked " +other.name + " recklessly and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left!");
+	    int ATTK =other.health+other.armorPoints - this.attack -this.attack -this.attack + other.defense;
+	    other.health = other.health ATTK;
+	    return (name+ " attacked " +other.name + " recklessly and dealt " ATTK+ " damage, " + other.name + " now has " + other.health + " left!");
 	}
 	else{
 	    return (name+ " attacked and missed!");
@@ -65,8 +67,9 @@ public class Basechar {
 	if (other.defense>this.attack*4/5){
 	    return(other.name+"'s defense was too great,"+this.name +" dealt no damage!");}
 	else if (didHit(accuracy+accuracy/10)){
-	    other.health = other.health - ((this.attack * 4)/5) + other.defense;
-	    return (name+ " attacked " +other.name + " quickly dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left!");
+	    int ATTK = other.health - ((this.attack * 4)/5)+other.armorPoints + other.defense;
+	    other.health = other.health -ATTK;
+	    return (name+ " attacked " +other.name + " quickly dealt " +attackATTK+ " damage, " + other.name + " now has " + other.health + " left!");
 	}
 	else{
 	    return (name+ " attacked and missed!");

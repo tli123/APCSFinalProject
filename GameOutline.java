@@ -152,6 +152,10 @@ public class GameOutline{
 	    System.exit(0);
 	}
 	else if (Choice.equals("RETREAT")){
+	    if (Level==1){
+		System.out.println("You can't go below level one, loser.");
+		return 1;
+	    }
 	    return Level-=1;
 	}
 	else if (Choice.equals("STAY")){
