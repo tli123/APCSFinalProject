@@ -36,39 +36,40 @@ public class Basechar {
     //Attack - Standard
     public String Attack(Basechar other){
 	if (other.defense>this.attack){
-	    System.out.println(other.name+"'s defense was too great,"+this.name +" dealt no damage");}
+	    return (other.name+"'s defense was too great,"+this.name +" dealt no damage!");
+	}
 	else if (didHit(accuracy)){
 	    other.health = other.health - this.attack+ other.defense;
-	    return (name+ " attacked " +other.name + " and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
+	    return (name+ " attacked " +other.name + " and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left!");
 	}
 	else {
-	    return (name+ " attacked and missed");
+	    return (name+ " attacked and missed!");
 	}
     }
 
     //Strong Attack - Half accuracy, higher power
     public String StrongAttack(Basechar other){
 	if (other.defense>this.attack+this.attack){
-	    System.out.println(other.name+"'s defense was too great,"+this.name +" dealt no damage");}
+	    return(other.name+"'s defense was too great,"+this.name +" dealt no damage!");}
 	else if (didHit(accuracy/2)){
 	    other.health = other.health - this.attack -this.attack -this.attack + other.defense;
-	    return (name+ " attacked " +other.name + " recklessly and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
+	    return (name+ " attacked " +other.name + " recklessly and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left!");
 	}
 	else{
-	    return (name+ " attacked and missed");
+	    return (name+ " attacked and missed!");
 	}
     }
  
     //Quick Attack - Higher accuracy, lower power
     public String QuickAttack(Basechar other){
 	if (other.defense>this.attack*4/5){
-	    System.out.println(other.name+"'s defense was too great,"+this.name +" dealt no damage");}
+	    return(other.name+"'s defense was too great,"+this.name +" dealt no damage!");}
 	else if (didHit(accuracy+accuracy/10)){
 	    other.health = other.health - ((this.attack * 4)/5) + other.defense;
-	    return (name+ " attacked " +other.name + " quickly dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
+	    return (name+ " attacked " +other.name + " quickly dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left!");
 	}
 	else{
-	    return (name+ " attacked and missed");
+	    return (name+ " attacked and missed!");
 	}
     }
 
@@ -327,7 +328,7 @@ public class Basechar {
 	    Choice = Choice.toUpperCase();
 	    String[] Check = {"QUIT", "YES", "NO"};
 	    if (!Choice.equals("QUIT")&&!Choice.equals("YES")&&!Choice.equals("NO")&&!Choice.equals("")) {
-		System.out.println("You did not answer the question");}
+		System.out.println("You did not answer the question.");}
 	    else {break;}}
 	if (Choice.equals("QUIT")){System.exit(0);}
 	if (Choice.equals("NO")){return false;}
@@ -495,15 +496,15 @@ public class Basechar {
 			System.out.println("Bronze Armor (1800 coins)");
 			System.out.println("Silver Armor (2200 coins)");
 			System.out.println("Golden Armor (5000 coins)\n");
-			System.out.println("What would you like to purchase? ");
 			while (true) { //Not done with store
+			    System.out.println("What would you like to purchase? ");
 			    String choice;
 			    while (true) {
 				Scanner sca = new Scanner(System.in);
 				choice = sca.nextLine();
 				choice = choice.toLowerCase();
 				if (!Arrays.asList(witems).contains(choice) && !choice.equals("back")) {
-				    System.out.println("This is not listed above. Enter something correct: ");
+				    System.out.println("This is not listed above. Enter something correct, or type in back to return to the shop menu: ");
 				}
 				else {
 				    break;
@@ -533,21 +534,21 @@ public class Basechar {
 			System.out.println("Fire Staff: A staff that glows and is warm to the touch. Has a 5% chance to burn the opponent. Bosses cannot be burned with this staff. Slightly more powerful than the Wooden Staff. (900 coins)");
 			System.out.println("Water Staff: A staff that is cool and refreshing to the touch. Has a 5% chance to heal you for half the damage you dealt to the monster. Much more powerful than the Fire Staff. (1400 coins)");
 			System.out.println("Earth Staff: A staff that radiates the power of nature. Has a 10% chance to drop the opponent's defense by 10%. Slightly more powerful than  the Water staff. (2500 coins)");
-			System.out.println("Ice Staff: A staff, when not handled properly, can freeze the best of mages. Has a 3% chance to freeze the opponent for 1 turn. Bosses cannot be frozen. Much more powerful than the Earth Staff. (5000 coins)");
+			System.out.println("Ice Staff: A staff, when not handled properly, can freeze the best of mages. Much more powerful than the Earth Staff. (5000 coins)");
 			System.out.println("Golden Staff: A staff that radiates brilliance. Has a 10% chance to lower the opponent's accuracy by 15%. Does not work on bosses. Much stronger than the Ice Staff. (10000 coins)");
 			System.out.println("Flaming Robe (1500 coins)");
 			System.out.println("Aqua Robe (1800 coins)");
 			System.out.println("Nature Robe (2200 coins)");
-			System.out.println("Icy Robe (5000 coins)\n");
-			System.out.println("What would you like to purchase? ");			
+			System.out.println("Icy Robe (5000 coins)\n");			
 			while (true) { //Not done with store
+			    System.out.println("What would you like to purchase? ");
 			    String choice;
 			    while (true) {
 				Scanner sca = new Scanner(System.in);
 				choice = sca.nextLine();
 				choice = choice.toLowerCase();
 				if (!Arrays.asList(mitems).contains(choice) && !choice.equals("back")) {
-				    System.out.println("This is not listed above. Enter something correct: ");
+				    System.out.println("This is not listed above. Enter something correct, or type in back to return to the shop menu: ");
 				}
 				else {
 				    break;
@@ -583,15 +584,15 @@ public class Basechar {
 			System.out.println("Black Armor (1800 coins)");
 			System.out.println("Koskin Armor (2500 coins");
 			System.out.println("Ninja Armor (5000 coins)\n");
-			System.out.println("What would you like to purchase? ");
 			while (true) { //Not done with store
+			    System.out.println("What would you like to purchase? ");
 			    String choice;
 			    while (true) {
 				Scanner sca = new Scanner(System.in);
 				choice = sca.nextLine();
 				choice = choice.toLowerCase();
 				if (!Arrays.asList(ritems).contains(choice) && !choice.equals("back")) {
-				    System.out.println("This is not listed above. Enter something correct: ");
+				    System.out.println("This is not listed above. Enter something correct, or type in back to return to the shop menu: ");
 				}
 				else {
 				    break;
@@ -625,16 +626,15 @@ public class Basechar {
 		    System.out.println("Yellow Potion: Restores 1/4 of your health. (200 coins)");
 		    System.out.println("Blue Potion: Restores 1/2 of your health. (400 coins)");
 		    System.out.println("Green Potion. Restores all of your health. (800 coins)\n");
-		    System.out.println("What would you like to purchase? ");
 		    while (true) {
-			
+			System.out.println("What would you like to purchase? ");
 			String choice;			
 			while (true) {
 			    Scanner sca = new Scanner(System.in);
 			    choice = sca.nextLine();
 			    choice = choice.toLowerCase();
 			    if (!Arrays.asList(gitems).contains(choice) && !choice.equals("back")) {
-				System.out.println("This is not listed above. Enter something correct: ");
+				System.out.println("This is not listed above. Enter something correct, or type in back to return to the shop menu: ");
 			    }
 			    else {
 				break;
@@ -655,7 +655,7 @@ public class Basechar {
 		    break;}
 	    }
 	    else {
-		System.out.println("Type either one, two, or three");}
+		System.out.println("Type either one, two, or three.");}
 	}
     }
 }

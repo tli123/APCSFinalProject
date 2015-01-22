@@ -19,7 +19,7 @@ public class Battle{
 	    String Atk = sc.nextLine();
 	    Atk=Atk.toUpperCase();
 	    if (!Atk.equals("QUIT")&&!Atk.equals("ATTACK")&&!Atk.equals("STRONG ATTACK")&&!Atk.equals("")&&!Atk.equals("QUICK ATTACK")){
-		System.out.println("You typed something wrong, your move has been invalided");}
+		System.out.println("You typed something wrong, your move has been invalided.");}
 	    else {
 	    if (Atk.equals("QUIT")){
 		System.exit(0);

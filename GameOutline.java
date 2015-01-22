@@ -9,7 +9,7 @@ public class GameOutline{
 	int MonsterNum;
 	
 	//Intro
-	System.out.println("\nIt was simply a day in Mr. Zamansky's first period APCS class. The class was working on the 'cruel and unusual punishment', better known as homework.\n\nSuddenly, the room grew dark. Everyone scrambled around in the darkness.\n\nAt the sound of the warning bell, all was well again. The students turned off their computers, and prepared to exit the class. Staring in front of the room, however, they realized something was amiss.\n\nMr. Mike Zamansky was nowhere to be seen. You, the hero, rushed up to his desk, to fin that his computer has been wiped cleaned. Except  a txt file named 'Period 1'.\n\nYou, the hero, open the file to discover the following contents:\n\nGreetings. As you may have already seen, your computer science teacher as been captured by yours truly, and stored in an encrypted file in this computer. I have heard how incompetent he is at teaching students. To free him, beat my computer generated dungeons and monsters, and maybe I'll release him. Then I can see if he has taught you anything. For now, however, I rule as the supreme leader of the computing world.\n\n~Mr. JonAlf Dryland-Weaver\n");
+	System.out.println("\nIt was simply a day in Mr. Zamansky's first period APCS class. The class was working on the 'cruel and unusual punishment', better known as homework.\n\nSuddenly, the room grew dark. Everyone scrambled around in the darkness.\n\nAt the sound of the warning bell, all was well again. The students turned off their computers, and prepared to exit the class. Staring in front of the room, however, they realized something was amiss.\n\nMr. Mike Zamansky was nowhere to be seen. You, the hero, rushed up to his desk, to fin that his computer has been wiped cleaned. Except  a txt file named 'Period 1'.\n\nYou, the hero, open the file to discover the following contents:\n\nGreetings. As you may have already seen, your computer science teacher as been captured by yours truly, and stored in an encrypted file in this computer. I have heard how incompetent he is at teaching students. To free him, beat my computer generated dungeons and monsters, and maybe I'll release him. Then I can see if he has taught you anything. For now, however, I rule as the supreme leader of the computing world.\n~Mr. JonAlf Dryland-Weaver\n");
 
 	//Loads + Saves files
 	SaveLoad SL = new SaveLoad();
@@ -145,7 +145,7 @@ public class GameOutline{
 	    Choice = Choice.toUpperCase();
 	    String[] Check = {"QUIT", "ADVANCE", "RETREAT", "STAY", ""};
 	    if (!Arrays.asList(Check).contains(Choice)) {
-		System.out.println("This is not advance, retreat, nor stay");}
+		System.out.println("This is not advance, retreat, nor stay.");}
 	    else {break;}
 	}
 	if (Choice.equals("QUIT")){
