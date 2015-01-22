@@ -33,7 +33,7 @@ public class Basechar {
 	this.armorPoints = aP;
     }
 
-    //Attacks
+    //Attack - Standard
     public String Attack(Basechar other){
 	if (didHit(accuracy)){
 	    other.health = other.health - this.attack;
@@ -43,6 +43,8 @@ public class Basechar {
 	    return (name+ " attacked and missed");
 	}
     }
+
+    //Strong Attack - Half accuracy, higher power
     public String StrongAttack(Basechar other){
 	if (didHit(accuracy/2)){
 	    other.health = other.health - this.attack -this.attack -this.attack ;
@@ -53,6 +55,7 @@ public class Basechar {
 	}
     }
 
+    //Quick Attack - Higher accuracy, lower power
     public String QuickAttack(Basechar other){
 	if (didHit(accuracy+accuracy/10)){
 	    other.health = other.health - ((this.attack * 4)/5) ;
@@ -62,9 +65,8 @@ public class Basechar {
 	    return (name+ " attacked and missed");
 	}
     }
-    
 
-    //Uses accuracy and dexterity to determine if the attack hit
+    //Check if attack hit
     public boolean didHit(int chance){
 	Random r = new Random();
 	if (r.nextInt(100)>chance){
@@ -94,9 +96,9 @@ public class Basechar {
 	System.out.println();
 	System.out.println("Your curent stats are:");
 	Stats();
-	System.out.println();
+	System.out.println("\n");
 	System.out.println("Pick a skill would you like to increase:");
-	System.out.println("Health, Attack, Accuracy, or Evade");
+	System.out.println("Health, Attack, Accuracy, or Evade?");
 
 	String Choice = "";
 	boolean Correct = true;
@@ -118,7 +120,7 @@ public class Basechar {
 	if (Choice.equals("HEALTH")){
 	    health+=5;
 	}
-	else if (Choice.equals("EVADE	")){
+	else if (Choice.equals("EVADE")){
 	    evade+=2;
 	}
 	else if (Choice.equals("ACCURACY")){
@@ -130,6 +132,7 @@ public class Basechar {
 	System.out.println();
 	System.out.println("Now your stats are the following:");
 	Stats();
+	System.out.println("\n");
     }
 
     //Random Number generator that will be used whenever something involves chance
@@ -242,10 +245,10 @@ public class Basechar {
 		System.out.println(i+". "+inventory.get(i));
 	    }
 	    if (inventory.size()==0){
-		System.out.println("Your inventory is empty!");}
-
-	    System.out.println("Type the number corresponding to the item you want to use");
-	    System.out.println("Type -1 to go back");
+		System.out.println("Your inventory is empty!");
+	    }
+	    System.out.println("\nType the number corresponding to the item you want to use");
+	    System.out.println("Type -1 to go back.\n");
 	
 	    int choice = 0;
 	    String Choice = "";
@@ -271,15 +274,19 @@ public class Basechar {
 	    if (choice!=-1){
 		int Con=Conversion(inventory.get(choice));
 		health+= Con;
-		System.out.println("You used "+ inventory.remove(choice));}
-	    else{ break;}
-
+		System.out.println("You used "+ inventory.remove(choice) +"!\n");
+	    }
+	    else{ 
+		break;
+	    }
 	    if (health > LimitHealth){
-		health = LimitHealth;}
+		health = LimitHealth;
+	    }
 	
 	}//While loop
     }
 
+    //Converts potion names into ints so players can heal
     public int Conversion(String str) {
 	if (str.equals("sp")){	
 	    return 50;
@@ -377,8 +384,10 @@ public class Basechar {
 	    health = 0;
 	}
     }
-    //////////////////////////////////////////////////////////////////////////////
+    
     //All down is shop
+
+    //Arrays for all items and their corresponding pricing and powers
     public String[] gitems;
     public String[] witems;
     public String[] mitems;
@@ -388,7 +397,7 @@ public class Basechar {
     public int[] power;
 
 
-
+    //Effects after player purchases the item - deduction of coins, equiping the new item, and updating of stats.
     public void check(String name, String typeitem){
         int pos = Search(name);
 	if (typeitem.equals("weapon")) {
@@ -408,6 +417,7 @@ public class Basechar {
 	System.out.println("You have successfully purchased " + name + "!");
     }
 
+    //Array searching function
     public int Search(String Name){
 	if (Arrays.asList(witems).contains(Name)){
 	    for (int i=0;i<witems.length; i++){
@@ -437,8 +447,11 @@ public class Basechar {
 		    return i;
 		}
 	    }	
-	}return 0;
+	}
+	return 0;
     }
+
+    //Instantiates the arrays
     public void Shop(){
 	gitems = new String[]{"small potion", "medium potion", "big potion", "red potion", "yellow potion", "blue potion", "green potion"};
 	priceg = new int[] {40, 60, 130, 100, 200, 400, 800};
@@ -449,6 +462,7 @@ public class Basechar {
 	power = new int[]{10, 20, 30, 40, 50, 60, 15, 30, 45, 60};
     }
 
+    //Actual Store. Prints out shop based on class
     public void Store() {
 	while (true) {
 	    System.out.println("Welcome to the shop!");

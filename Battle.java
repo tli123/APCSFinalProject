@@ -113,8 +113,8 @@ public class Battle{
     //Example of battle
     public static void main(String args[]){
 	Battle b = new Battle();
-	Warrior w1 = new Warrior("Knight");
-	Warrior w2 = new Warrior("King");
+	Character w1 = new Character(1, "Knight");
+	Character w2 = new Character(1, "King");
 	System.out.println(b.battle(w1, w2));
     }
 

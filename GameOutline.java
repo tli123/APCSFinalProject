@@ -7,7 +7,9 @@ public class GameOutline{
 	boolean battleWon=false;
 	int LevelNumber = 1;
 	int MonsterNum;
-	// Introduction + Credits
+	
+	//Intro
+	System.out.println("\nIt was simply a day in Mr. Zamansky's first period APCS class. The class was working on the 'cruel and unusual punishment', better known as homework.\n\nSuddenly, the room grew dark. Everyone scrambled around in the darkness.\n\nAt the sound of the warning bell, all was well again. The students turned off their computers, and prepared to exit the class. Staring in front of the room, however, they realized something was amiss.\n\nMr. Mike Zamansky was nowhere to be seen. You, the hero, rushed up to his desk, to fin that his computer has been wiped cleaned. Except  a txt file named 'Period 1'.\n\nYou, the hero, open the file to discover the following contents:\n\nGreetings. As you may have already seen, your computer science teacher as been captured by yours truly, and stored in an encrypted file in this computer. I have heard how incompetent he is at teaching students. To free him, beat my computer generated dungeons and monsters, and maybe I'll release him. Then I can see if he has taught you anything. For now, however, I rule as the supreme leader of the computing world.\n\n~Mr. JonAlf Dryland-Weaver\n\n\n");
 
 	//Loads + Saves files
 	SaveLoad SL = new SaveLoad();
@@ -22,8 +24,6 @@ public class GameOutline{
 
 	else{
 	    GetName N=new GetName();
-	    //String name=N.Name();
-	    //int classNum = N.ClassPicker();
 	    B = new Character(N.ClassPicker(), N.Name());
 	    B.inventory=SL.InitialInventoryLoad();
 	    MonsterNum=LevelNumber*2;}
@@ -89,7 +89,7 @@ public class GameOutline{
 	    }//MonsterNum>0
 
 	    Battle Fight = new Battle();
-	    Boss A = new Boss();
+	    Character  A = new Character("Boss");
 	    A.BossGen(LevelNumber);
 
 	    if(Fight.battle(B, A)){
@@ -113,17 +113,17 @@ public class GameOutline{
 	}//while(LevelNumber<10
 	System.out.println("You are now on the last level of the game.....");
 	System.out.println("You have done a good job getting this far.....");
-	System.out.println("But everything ends NOW!");
+	System.out.println("But everything ends NOW! You will have no choice but to defeat me, the ultimate Mr. DW, in battle!");
 
-	Overlord A=new Overlord();
+	Character A = new Character("Overlord");
 	A.Gen(LevelNumber);
 	Battle fight = new Battle();
 	if (fight.battle(B,A)){
 	    B.LevelingUp();
 	    B.coins+=A.coins;
-	    System.out.println("You have defeated the OverLord");
+	    System.out.println("You have defeated the OverLord, Mr. DW!\nYou have rescued Mr. Zamansky from his prison, and you can continue yoru computer science class once more in peace.\n");
 	    System.out.println("Your game has been saved and once you load, you will be back on level 9");
-	    System.out.println("Thanks for playing");
+	    System.out.println("Thanks for playing!");
 	    SL.Write(B.GetStats(), LevelNumber-1, LevelNumber*5-5);
 	    System.exit(0);}
 	else {
@@ -170,14 +170,4 @@ public class GameOutline{
 	else if (Picker<14){return 4;}
 	else{return 5;}
     }
-
-/*
-    public static void main(String args[]){
-	GameOutline Game = new GameOutline();
-	Game.GAME();
-    }
-*/
-
-
-
 }
