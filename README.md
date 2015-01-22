@@ -47,6 +47,6 @@ Period 1
 
 1/20/2015: Added quick attack, shop is buggy but works, inventory now works right away, enemy has variation in attack. Merged shop and gameoutline in order to make shop less buggy. Also deleted Driver. Tommy Rong
 
-1/21/2015: Worked on debugging shop and finished it, now both potions and weapons loop back after exiting from each subsection. Implemented different class options and used Character class to overshadow all other monster class, all monster classes besides character can now be deleted Tommy Rong
+1/21/2015: Worked on debugging shop and finished it, now both potions and weapons loop back after exiting from each subsection. Implemented different class options and used Character class to overshadow all other monster class, all monster classes besides character can now be deleted. Deleted all char classes, further work on condensing the classes. Adding plot to the game, and potentially working on a title block. Tommy Rong
 
 Still need to work on:shop, title block
