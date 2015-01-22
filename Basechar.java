@@ -35,8 +35,10 @@ public class Basechar {
 
     //Attack - Standard
     public String Attack(Basechar other){
-	if (didHit(accuracy)){
-	    other.health = other.health - this.attack;
+	if (other.defense>this.attack){
+	    System.out.println(other.name+"'s defense was too great,"+this.name +" dealt no damage");}
+	else if (didHit(accuracy)){
+	    other.health = other.health - this.attack+ other.defense;
 	    return (name+ " attacked " +other.name + " and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
 	}
 	else {
@@ -46,19 +48,23 @@ public class Basechar {
 
     //Strong Attack - Half accuracy, higher power
     public String StrongAttack(Basechar other){
-	if (didHit(accuracy/2)){
-	    other.health = other.health - this.attack -this.attack -this.attack ;
+	if (other.defense>this.attack+this.attack){
+	    System.out.println(other.name+"'s defense was too great,"+this.name +" dealt no damage");}
+	else if (didHit(accuracy/2)){
+	    other.health = other.health - this.attack -this.attack -this.attack + other.defense;
 	    return (name+ " attacked " +other.name + " recklessly and dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
 	}
 	else{
 	    return (name+ " attacked and missed");
 	}
     }
-
+ 
     //Quick Attack - Higher accuracy, lower power
     public String QuickAttack(Basechar other){
-	if (didHit(accuracy+accuracy/10)){
-	    other.health = other.health - ((this.attack * 4)/5) ;
+	if (other.defense>this.attack*4/5){
+	    System.out.println(other.name+"'s defense was too great,"+this.name +" dealt no damage");}
+	else if (didHit(accuracy+accuracy/10)){
+	    other.health = other.health - ((this.attack * 4)/5) + other.defense;
 	    return (name+ " attacked " +other.name + " quickly dealt " +attack+ " damage, " + other.name + " now has " + other.health + " left");
 	}
 	else{
