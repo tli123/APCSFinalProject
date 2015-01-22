@@ -1,7 +1,7 @@
-1
+5
 0
-40
-14
+75
+92
 4
 90
 10
@@ -11,4 +11,4 @@ Basic Staff
 Basic Robe
 MageLord
 Mage
-24
+6601

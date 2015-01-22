@@ -2,7 +2,6 @@ public class Character extends Basechar {
 
     public Character(String Name) {
 	super(10, 2, 0, 75, 5, 2, "Epic Boss 2k14", "Boss", 30, "", 0);
-	System.out.println(Name);
 	if (Name.equals("CannonFodder")) {
 	    health=10;
 	    attack = 2;
@@ -41,7 +40,7 @@ public class Character extends Basechar {
 	    accuracy = 100;
 	    evade = 25;
 	    weaponStats=10;
-	    name = "Epic Overlord";
+	    name = "Mr. JonAlf Dryland-Weaver";
 	    type = "BOSS";
 	    coins = 150;
 	}
