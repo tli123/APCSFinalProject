@@ -252,7 +252,7 @@ public class Basechar {
     public void InventoryWork(){
 	while (true){
 	    System.out.println("This is your inventory:");
-	    System.out.println(inventory.size());
+	    //System.out.println(inventory.size());
 	    for (int i=0; i<inventory.size(); i++){
 		System.out.println(i+". "+inventory.get(i));
 	    }

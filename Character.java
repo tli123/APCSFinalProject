@@ -78,7 +78,7 @@ public class Character extends Basechar {
 	    accuracy = 90;
 	    evade = 15;
 	    name = charname;
-	    type = "Rouge";
+	    type = "Rogue";
 	    coins = 0;
 	    armorName= "Brittle Armor";
 	    armorPoints = 0;

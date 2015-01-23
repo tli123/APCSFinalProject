@@ -1,14 +1,14 @@
-1
-7
-85
-131
+2
 4
+35
+13
+5
 90
-10
-60
-golden staff
+15
 0
-Basic Robe
-MageLord
-Mage
-2316
+Knife
+0
+Brittle Armor
+Mini-Zamansky
+Rogue
+75

@@ -32,8 +32,19 @@ public class GameOutline{
 
 	HoldUp(2500);
 
-	System.out.println("\nIt was simply a day in Mr. Zamansky's first period APCS class. The class was working on the 'cruel and unusual punishment', better known as homework.\n\nSuddenly, the room grew dark. Everyone scrambled around in the darkness.\n\nAt the sound of the warning bell, all was well again. The students turned off their computers, and prepared to exit the class. Staring in front of the room, however, they realized something was amiss.\n\nMr. Mike Zamansky was nowhere to be seen. You, the hero, rushed up to his desk, to fin that his computer has been wiped cleaned. Except  a txt file named 'Period 1'.\n\nYou, the hero, open the file to discover the following contents:\n\nGreetings. As you may have already seen, your computer science teacher as been captured by yours truly, and stored in an encrypted file in this computer. I have heard how incompetent he is at teaching students. To free him, beat my computer generated dungeons and monsters, and maybe I'll release him. Then I can see if he has taught you anything. For now, however, I rule as the supreme leader of the computing world.\n~Mr. JonAlf Dryland-Weaver\n");
+	String First="\nIt was simply a day in Mr. Zamansky's first period APCS class. The class was working on the 'cruel and unusual punishment', better known as homework.\n\nSuddenly, the room grew dark. Everyone scrambled around in the darkness.\n\nAt the sound of the warning bell, all was well again. The students turned off their computers, and prepared to exit the class. Staring in front of the room, however, they realized something was amiss.\n\nMr. Mike Zamansky was nowhere to be seen. You, the hero, rushed up to his desk, to find that his computer has been wiped cleaned. Except  a txt file named 'Period 1'.\n\nYou, the hero, open the file to discover the following contents:\n\nGreetings. As you may have already seen, your computer science teacher as been captured by yours truly, and stored in an encrypted file in this computer. I have heard how incompetent he is at teaching students. To free him, beat my computer generated dungeons and monsters, and maybe I'll release him. Then I can see if he has taught you anything. For now, however, I rule as the supreme leader of the computing world.\n~Mr. JonAlf Dryland-Weaver\n";
+	String Second ="P.S. A once great man said pressing enter can make life a lot easier. To add onto that, entering quit while in battle, or entering back in store is also very helpful.";
 
+	for(int i=0; i<First.length(); i++){
+	    System.out.print(First.substring(i,i+1));
+	    HoldUp(50);}
+	System.out.println();
+	for(int i=0; i<Second.length();i++){
+	    System.out.print(Second.substring(i,i+1));
+	    HoldUp(50);
+	}
+	System.out.println("\n\n");
+	
 	//Loads + Saves files
 	SaveLoad SL = new SaveLoad();
 	Character B = new Character(1, "Rong");
@@ -49,7 +60,7 @@ public class GameOutline{
 	    GetName N=new GetName();
 	    B = new Character(N.ClassPicker(), N.Name());
 	    B.inventory=SL.InitialInventoryLoad();
-	    MonsterNum=LevelNumber*2;}
+	    MonsterNum=LevelNumber*2+1;}
 
 	System.out.println();
 
@@ -60,7 +71,7 @@ public class GameOutline{
 
 	while(LevelNumber<10){
 
-	    while (MonsterNum>0){ //Dungeon not cleared
+	    while (MonsterNum>1){ //Dungeon not cleared
 		System.out.println("There are "+MonsterNum+" monsters left");
 		Battle fight = new Battle();
 		int MCoins;
@@ -107,7 +118,7 @@ public class GameOutline{
 		}//upper fighting if
 		else {
 		    LevelNumber -= 1;
-		    MonsterNum=LevelNumber*2;
+		    MonsterNum=LevelNumber*2+1;
 		}
 	    }//MonsterNum>0
 
@@ -125,11 +136,11 @@ public class GameOutline{
 
 	    GameOutline M = new GameOutline();
 	    LevelNumber = M.Moving(LevelNumber);
-	    MonsterNum=LevelNumber*2;
+	    MonsterNum=LevelNumber*2+1;
 	    }else{//fight lost
 		LevelNumber-=1;}
 
-	    MonsterNum=LevelNumber*2;
+	    MonsterNum=LevelNumber*2+1;
 	    System.out.println("You are now on level "+LevelNumber);
 	    
 	    
@@ -147,11 +158,11 @@ public class GameOutline{
 	    System.out.println("You have defeated the OverLord, Mr. DW!\nYou have rescued Mr. Zamansky from his prison, and you can continue your computer science class once more in peace.\n");
 	    System.out.println("Your game has been saved and once you load, you will be back on level 9");
 	    System.out.println("Thanks for playing!");
-	    SL.Write(B.GetStats(), LevelNumber-1, LevelNumber*5-5);
+	    SL.Write(B.GetStats(), LevelNumber-1, LevelNumber*2-1);
 	    System.exit(0);}
 	else {
 	    LevelNumber -= 1;
-	    MonsterNum=LevelNumber*5;
+	    MonsterNum=LevelNumber*2+1;
 	}
     	}//while(true)
 	    
