@@ -1,7 +1,7 @@
 1
-11
+7
 85
-127
+131
 4
 90
 10
@@ -11,4 +11,4 @@ golden staff
 Basic Robe
 MageLord
 Mage
-2271
+2316
