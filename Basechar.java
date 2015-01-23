@@ -35,21 +35,22 @@ public class Basechar {
 
     //Attack - Standard
     public String Attack(Basechar other){
+	HoldUp(300);
 	int ATTK =this.attack+this.weaponStats -other.defense - other.armorPoints;
 	if (ATTK<0){
 	    return(other.name+"'s defense was too great,"+this.name +" dealt no damage!");}
 	else if (didHit(accuracy)){
 	    other.health = other.health - ATTK;
-	    HoldUp(250);
 	    return (name+ " attacked " +other.name + " and dealt " +ATTK+ " damage, " + other.name + " now has " + other.health + " left!");
 	}
 	else {
-	    return (name+ " attacked and missed!");
+	    return(name+ " attacked and missed!");
 	}
     }
 
     //Strong Attack - Half accuracy, higher power
     public String StrongAttack(Basechar other){
+	HoldUp(300);
 	int ATTK =this.attack*3+this.weaponStats -other.defense - other.armorPoints;
 	if (ATTK<0){
 	    return(other.name+"'s defense was too great,"+this.name +" dealt no damage!");}
@@ -65,6 +66,7 @@ public class Basechar {
  
     //Quick Attack - Higher accuracy, lower power
     public String QuickAttack(Basechar other){
+	HoldUp(300);
 	int ATTK =this.attack*4/5+this.weaponStats -other.defense - other.armorPoints;
 	if (ATTK<0){
 	    return(other.name+"'s defense was too great,"+this.name +" dealt no damage!");}

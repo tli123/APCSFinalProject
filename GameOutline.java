@@ -21,10 +21,10 @@ public class GameOutline{
 	System.out.println("                                     |");
 	System.out.println("                               ______|");
 	System.out.println("");
-	System.out.println("                       |                 |");
-	System.out.println("                       |                 |");
-	System.out.println("_____     ____    _____|      _____      | _____    _____     ____    _____");
-	System.out.println("     \\  |/    \\  /     \\           \\     |/     \\  /     \\  |/    \\  /     \\");
+	System.out.println("                       |                 |      |");
+	System.out.println("                       |                 |      |");
+	System.out.println("_____     ____    _____|      _____      |______|   _____     ____    _____");
+	System.out.println("     \\  |/    \\  /     \\           \\     |      |  /     \\  |/    \\  /     \\");
 	System.out.println(" ____|  |     |  |     |       ____|     |      |  |_____/  |        |     |");
 	System.out.println("/    |  |     |  |     |      /    |     |      |  |        |        |     |");
 	System.out.println("\\____|  |     |  \\____/|      \\____|     |      |  \\_____/  |        \\_____/");
@@ -32,7 +32,7 @@ public class GameOutline{
 
 	HoldUp(2500);
 
-	String First="\nIt was simply a day in Mr. Zamansky's first period APCS class. The class was working on the 'cruel and unusual punishment', better known as homework.\n\nSuddenly, the room grew dark. Everyone scrambled around in the darkness.\n\nAt the sound of the warning bell, all was well again. The students turned off their computers, and prepared to exit the class. Staring in front of the room, however, they realized something was amiss.\n\nMr. Mike Zamansky was nowhere to be seen. You, the hero, rushed up to his desk, to find that his computer has been wiped cleaned. Except  a txt file named 'Period 1'.\n\nYou, the hero, open the file to discover the following contents:\n\nGreetings. As you may have already seen, your computer science teacher as been captured by yours truly, and stored in an encrypted file in this computer. I have heard how incompetent he is at teaching students. To free him, beat my computer generated dungeons and monsters, and maybe I'll release him. Then I can see if he has taught you anything. For now, however, I rule as the supreme leader of the computing world.\n~Mr. JonAlf Dryland-Weaver\n";
+	String First="\nIt was simply a day in Mr. Zamansky's first period APCS class. The class was working on the 'cruel and unusual punishment', better known as homework.\n\nSuddenly, the room grew dark. Everyone scrambled around in the darkness.\n\nAt the sound of the warning bell, all was well again. The students turned off their computers, and prepared to exit the class. Staring in front of the room, however, they realized something was amiss.\n\nMr. Mike Zamansky was nowhere to be seen. You, the hero, rushed up to his desk, to find that his computer has been wiped clean. Except  a txt file named 'Period 1'.\n\nYou, the hero, open the file to discover the following contents:\n\nGreetings. As you may have already seen, your computer science teacher as been captured by yours truly, and stored in an encrypted file in this computer. I have heard how incompetent he is at teaching students. To free him, beat my computer generated dungeons and monsters, and maybe I'll release him. Then I can see if he has taught you anything. For now, however, I rule as the supreme leader of the computing world.\n~Mr. JonAlf Dryland-Weaver\n";
 	String Second ="P.S. A once great man said pressing enter can make life a lot easier. To add onto that, entering quit while in battle, or entering back in store is also very helpful.";
 
 	for(int i=0; i<First.length(); i++){
