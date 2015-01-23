@@ -49,4 +49,6 @@ Period 1
 
 1/21/2015: Worked on debugging shop and finished it, now both potions and weapons loop back after exiting from each subsection. Implemented different class options and used Character class to overshadow all other monster class, all monster classes besides character can now be deleted. Deleted all char classes, further work on condensing the classes. Adding plot to the game, and potentially working on a title block. Also, fix up Gameoutline as it can work without the new char classes. Tommy Rong
 
-Still need to work on:shop, title block
+1/22/2015: Tidied up the project, made title block, introduce Thread.sleep to allow player to see what is actually occuring Tommy Rong
+
+To start the game, compile GameOutline.java and run it.

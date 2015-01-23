@@ -9,6 +9,29 @@ public class GameOutline{
 	int MonsterNum;
 	
 	//Intro
+
+	System.out.println("\n\n\n   ______");
+	System.out.println("  |       \\");
+	System.out.println("  |       |             ____    ____     _____    _____     ____    _____");
+	System.out.println("  |       |  |     |  |/    \\  /    \\|  /     \\  /     \\  |/    \\  /");
+	System.out.println("  |       |  |     |  |     |  |     |  |_____/  |     |  |     |  |____");
+	System.out.println("  |       |  |     |  |     |  |     |  |        |     |  |     |       |");
+	System.out.println("  |______/   \\____/|  |     |  \\_____|  \\_____   \\_____/  |     |  _____/");
+	System.out.println("                                     |");
+	System.out.println("                                     |");
+	System.out.println("                               ______|");
+	System.out.println("");
+	System.out.println("                       |                 |");
+	System.out.println("                       |                 |");
+	System.out.println("_____     ____    _____|      _____      | _____    _____     ____    _____");
+	System.out.println("     \\  |/    \\  /     \\           \\     |/     \\  /     \\  |/    \\  /     \\");
+	System.out.println(" ____|  |     |  |     |       ____|     |      |  |_____/  |        |     |");
+	System.out.println("/    |  |     |  |     |      /    |     |      |  |        |        |     |");
+	System.out.println("\\____|  |     |  \\____/|      \\____|     |      |  \\_____/  |        \\_____/");
+	System.out.println("\nBy Rong Yu and Tommy Li, Period 1");
+
+	HoldUp(2500);
+
 	System.out.println("\nIt was simply a day in Mr. Zamansky's first period APCS class. The class was working on the 'cruel and unusual punishment', better known as homework.\n\nSuddenly, the room grew dark. Everyone scrambled around in the darkness.\n\nAt the sound of the warning bell, all was well again. The students turned off their computers, and prepared to exit the class. Staring in front of the room, however, they realized something was amiss.\n\nMr. Mike Zamansky was nowhere to be seen. You, the hero, rushed up to his desk, to fin that his computer has been wiped cleaned. Except  a txt file named 'Period 1'.\n\nYou, the hero, open the file to discover the following contents:\n\nGreetings. As you may have already seen, your computer science teacher as been captured by yours truly, and stored in an encrypted file in this computer. I have heard how incompetent he is at teaching students. To free him, beat my computer generated dungeons and monsters, and maybe I'll release him. Then I can see if he has taught you anything. For now, however, I rule as the supreme leader of the computing world.\n~Mr. JonAlf Dryland-Weaver\n");
 
 	//Loads + Saves files
@@ -168,10 +191,26 @@ public class GameOutline{
     public int MonPicker(int LevelNumber){
 	Random R = new Random();
 	int Picker = R.nextInt(LevelNumber)+LevelNumber;
-	if (Picker<3){return 1;}
-	else if (Picker<6){return 2;}
-	else if (Picker<10){return 3;}
-	else if (Picker<14){return 4;}
-	else{return 5;}
+	if (Picker<3){
+	    return 1;
+	}
+	else if (Picker<6){
+	    return 2;
+	}
+	else if (Picker<10){
+	    return 3;
+	}
+	else if (Picker<14){
+	    return 4;
+	}
+	else{
+	    return 5;
+	}
+    }
+
+    public static void HoldUp(int n) {
+	try {
+	    Thread.sleep(n);
+	} catch (Exception e) {}
     }
 }

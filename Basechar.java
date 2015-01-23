@@ -41,6 +41,7 @@ public class Basechar {
 	else if (didHit(accuracy)){
 	    int ATTK = other.health - this.attack+ other.defense+other.armorPoints;
 	    other.health = other.health - ATTK;
+	    HoldUp(250);
 	    return (name+ " attacked " +other.name + " and dealt " +ATTK+ " damage, " + other.name + " now has " + other.health + " left!");
 	}
 	else {
@@ -54,8 +55,9 @@ public class Basechar {
 	    return(other.name+"'s defense was too great,"+this.name +" dealt no damage!");}
 	else if (didHit(accuracy/2)){
 	    int ATTK =other.health+other.armorPoints - this.attack -this.attack -this.attack + other.defense;
-	    other.health = other.health ATTK;
-	    return (name+ " attacked " +other.name + " recklessly and dealt " ATTK+ " damage, " + other.name + " now has " + other.health + " left!");
+	    other.health = other.health - ATTK;
+	    HoldUp(250);
+	    return (name+ " attacked " +other.name + " recklessly and dealt " + ATTK+ " damage, " + other.name + " now has " + other.health + " left!");
 	}
 	else{
 	    return (name+ " attacked and missed!");
@@ -69,7 +71,8 @@ public class Basechar {
 	else if (didHit(accuracy+accuracy/10)){
 	    int ATTK = other.health - ((this.attack * 4)/5)+other.armorPoints + other.defense;
 	    other.health = other.health -ATTK;
-	    return (name+ " attacked " +other.name + " quickly dealt " +attackATTK+ " damage, " + other.name + " now has " + other.health + " left!");
+	    HoldUp(250);
+	    return (name+ " attacked " +other.name + " quickly dealt " + ATTK+ " damage, " + other.name + " now has " + other.health + " left!");
 	}
 	else{
 	    return (name+ " attacked and missed!");
@@ -660,5 +663,11 @@ public class Basechar {
 	    else {
 		System.out.println("Type either one, two, or three.");}
 	}
+    }
+
+     public static void HoldUp(int n) {
+	try {
+	    Thread.sleep(n);
+	} catch (Exception e) {}
     }
 }
